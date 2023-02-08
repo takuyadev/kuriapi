@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "ts-node ./src/index.ts"
+    "tsc": "tsc",
+    "start:prod": "node ./dist/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
