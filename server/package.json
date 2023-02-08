@@ -1,7 +1,7 @@
 {
   "scripts": {
     "tsc": "tsc",
-    "start": "ts-node ./src/server"
+    "start": "ts-node --transpile-only ./src/server"
   },
   "dependencies": {
     "cors": "^2.8.5",

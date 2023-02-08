@@ -6,6 +6,7 @@ import connect from "./config/db"
 // Set environment variable
 dotenv.config()
 const { SERVER_PORT, MONGODB_URI } = process.env
+const PORT = SERVER_PORT || 5000
 
 // Connect to database
 MONGODB_URI && connect(MONGODB_URI)
@@ -17,6 +18,6 @@ const app = express()
 app.use("/bacteria", bacteria)
 
 // listen to server
-app.listen(SERVER_PORT, () => {
-  console.log(`App listening on port: ${SERVER_PORT}`)
+app.listen(PORT, () => {
+  console.log(`App listening on port: ${PORT}`)
 })
