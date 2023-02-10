@@ -82,12 +82,14 @@ export const updateBacteria = asyncHandler(
     const data: IBacteria = req.body
 
     // Search for ability data before adding bacteria
-    const bacteria = await Bacteria.findByIdAndUpdate(id, data, { new: true })
+    const bacteria = await Bacteria.findByIdAndUpdate(id, data)
 
     // Error handle if ability returns false
     if (!bacteria) {
       errorResponse(res, 404, "Could not find Bacteria with provided id", {})
     }
+
+    bacteria?.save({ validateBeforeSave: false })
 
     res.status(200).json({
       success: true,
@@ -97,7 +99,7 @@ export const updateBacteria = asyncHandler(
 )
 
 // @route /bacteria/:id
-// @desc Delete single Bacteria to
+// @desc Delete single bacteria to
 // @method DELETE
 export const deleteBacteria = asyncHandler(
   async (req: Request, res: Response, _next: NextFunction) => {

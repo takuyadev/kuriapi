@@ -133,12 +133,11 @@ const BacteriaSchema = new Schema<IBacteria>({
   },
 })
 
-BacteriaSchema.pre<IBacteria>("save", async function (next) {
+BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
   const ability: IAbility | null = await Ability.findById(this.ability._id)
   if (ability) {
     this.ability = ability
   }
-  next()
 })
 
 export default model<IBacteria & Document>("Bacteria", BacteriaSchema)
