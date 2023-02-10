@@ -7,4 +7,5 @@ export interface IAbility {
     english_desc: string
     japanese_desc: string
   }
+  slug: string
 }

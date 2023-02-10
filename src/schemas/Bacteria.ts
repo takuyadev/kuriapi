@@ -1,9 +1,17 @@
-import mongoose, { model, Schema, Document } from "mongoose"
+import mongoose, { model, Model, Schema, Document } from "mongoose"
 import Ability from "./Ability"
 import { IBacteria } from "../models/interfaces/IBacteria"
+import { IPaginationOptions } from "../models/interfaces/IPaginate"
 import { IAbility } from "../models/interfaces/IAbility"
+import { paginate } from "../middlewares/paginate"
 
-const BacteriaSchema = new Schema<IBacteria>({
+// Establish methods on the model
+export interface IBacteriaModel extends Model<IBacteria> {
+  paginate(query: any, options: IPaginationOptions): any
+  slugify(): any
+}
+
+const BacteriaSchema: Schema = new Schema<IBacteria>({
   game_index: {
     type: Number,
   },
@@ -37,6 +45,8 @@ const BacteriaSchema = new Schema<IBacteria>({
       maxlength: 64,
     },
   },
+
+  slug: String,
 
   type: {
     type: String,
@@ -133,11 +143,37 @@ const BacteriaSchema = new Schema<IBacteria>({
   },
 })
 
+// Update slug whenever name changes or updates
 BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
+  if (!this.isModified("name")) {
+    next()
+  }
+  this.slug = this.name.romanji_name.toLowerCase()
+})
+
+// Update ability based on newly provided ability ID reference
+BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
+  // If ability is not modified, move onto next middleware
+  if (!this.isModified("ability")) {
+    next()
+  }
+
+  // Find ability on new id, and add only name to ability
   const ability: IAbility | null = await Ability.findById(this.ability._id)
   if (ability) {
     this.ability = ability
   }
 })
 
-export default model<IBacteria & Document>("Bacteria", BacteriaSchema)
+// Set pagination method for Bacteria
+BacteriaSchema.statics.paginate = async function (
+  query,
+  options: IPaginationOptions
+) {
+  return await paginate.bind(this)(query, options)
+}
+
+export default model<IBacteria & Document, IBacteriaModel>(
+  "Bacteria",
+  BacteriaSchema
+)

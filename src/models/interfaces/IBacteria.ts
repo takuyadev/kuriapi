@@ -1,14 +1,18 @@
 export interface IBacteria {
   _id?: string
   game_index: number
+
+  slug: string
   name: {
     romanji_name: string
     japanese_name: string
   }
+
   desc: {
     english_desc: string
     japanese_desc: string
   }
+
   type: "edge" | "veil" | "solid"
   ability: {
     _id?: string
@@ -17,6 +21,7 @@ export interface IBacteria {
       japanese_name: string
     }
   }
+
   size: "s" | "m" | "l"
   ph: "acid" | "neutral" | "alkaline"
   temperature: "low" | "medium" | "high"

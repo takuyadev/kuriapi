@@ -5,18 +5,44 @@ import { asyncHandler } from "../middlewares/async"
 import { Request, Response, NextFunction } from "express"
 import { IBacteria } from "../models/interfaces/IBacteria"
 import { IAbility } from "../models/interfaces/IAbility"
-import { isValidObjectId, ObjectId } from "mongoose"
+import { isValidObjectId } from "mongoose"
 
 // @route /bacteria
 // @desc Gets all bacteria
 // @method GET
 export const getBacterias = asyncHandler(
   async (req: Request, res: Response, _next: NextFunction) => {
-    const bacteria = await Bacteria.find()
+    let bacteria
+
+    // If query is not filled, find all Bacteria on database
+    if (!req.query) {
+      bacteria = await Bacteria.find()
+    }
+
+    // If query is filled out, find based on query
+    if (req.query) {
+      const { page, limit } = req.query
+
+      // Check query type, if not provide default
+      const currentPage = typeof page === "string" ? parseInt(page) : 1
+      const limitPerPage = typeof limit === "string" ? parseInt(limit) : 10
+
+      // Return pagination results
+      bacteria = await Bacteria.paginate({}, { currentPage, limitPerPage })
+    }
+
+    if (!bacteria) {
+      errorResponse(
+        res,
+        404,
+        "Could not find bacteria with specified query.",
+        {}
+      )
+    }
 
     res.status(200).json({
       success: true,
-      data: bacteria,
+      bacteria,
     })
   }
 )
@@ -27,21 +53,31 @@ export const getBacterias = asyncHandler(
 export const getBacteria = asyncHandler(
   async (req: Request, res: Response, _next: NextFunction) => {
     const { id } = req.params
+    let bacteria: string | null = ""
 
-    // Validate ID format
-    if (!isValidObjectId(id)) {
-      errorResponse(res, 404, "Please provide proper ObjectId", {})
+    // Validate ID format and if req.params exists
+    if (!isValidObjectId(id) && !req.params) {
+      errorResponse(res, 404, "Please provide proper parameters", {})
     }
 
-    const bacteria = await Bacteria.findById(id)
+    // If it's valid objectid, then search using objectId
+    if (isValidObjectId(id)) {
+      bacteria = await Bacteria.findById(id)
+    }
 
+    // If not, then try using slug instead
+    else {
+      bacteria = await Bacteria.findOne({ slug: id })
+    }
+
+    // If all search returns false, then respond with error
     if (!bacteria) {
       errorResponse(res, 404, "Could not find Bacteria with provided id", {})
     }
 
     res.status(200).json({
       success: true,
-      data: bacteria,
+      bacteria,
     })
   }
 )
@@ -67,7 +103,7 @@ export const addBacteria = asyncHandler(
 
     res.status(200).json({
       success: true,
-      data: bacteria,
+      bacteria,
     })
   }
 )
@@ -93,7 +129,7 @@ export const updateBacteria = asyncHandler(
 
     res.status(200).json({
       success: true,
-      data: bacteria,
+      bacteria,
     })
   }
 )

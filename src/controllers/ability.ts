@@ -11,11 +11,37 @@ import { IAbility } from "../models/interfaces/IAbility"
 // @method GET
 export const getAbilities = asyncHandler(
   async (req: Request, res: Response, _next: NextFunction) => {
-    const ability = await Ability.find()
+    let ability
+
+    // If query is not filled, find all Bacteria on database
+    if (!req.query) {
+      ability = await Ability.find()
+    }
+
+    // If query is filled out, find based on query
+    if (req.query) {
+      const { page, limit } = req.query
+
+      // Check query type, if not provide default
+      const currentPage = typeof page === "string" ? parseInt(page) : 1
+      const limitPerPage = typeof limit === "string" ? parseInt(limit) : 10
+
+      // Return pagination results
+      ability = await Ability.paginate({}, { currentPage, limitPerPage })
+    }
+
+    if (!ability) {
+      errorResponse(
+        res,
+        404,
+        "Could not find ability with specified query.",
+        {}
+      )
+    }
 
     res.status(200).json({
       success: true,
-      data: ability,
+      ability,
     })
   }
 )
@@ -26,22 +52,31 @@ export const getAbilities = asyncHandler(
 export const getAbility = asyncHandler(
   async (req: Request, res: Response, _next: NextFunction) => {
     const { id } = req.params
+    let ability: string | null = ""
 
-    // Validate ID format
-    if (!isValidObjectId(id)) {
-      errorResponse(res, 404, "Please provide proper ObjectId", {})
+    // Validate ID format and if req.params exists
+    if (!isValidObjectId(id) && !req.params) {
+      errorResponse(res, 404, "Please provide proper parameters", {})
     }
 
-    const ability = await Ability.findById(id)
+    // If it's valid objectid, then search using objectId
+    if (isValidObjectId(id)) {
+      ability = await Ability.findById(id)
+    }
 
-    // Error handle if no ability was found
+    // If not, then try using slug instead
+    else {
+      ability = await Ability.findOne({ slug: id })
+    }
+
+    // If all search returns false, then respond with error
     if (!ability) {
-      errorResponse(res, 404, "Could not find ability", { id })
+      errorResponse(res, 404, "Could not find Bacteria with provided id", {})
     }
 
     res.status(200).json({
       success: true,
-      data: ability,
+      ability,
     })
   }
 )
@@ -55,7 +90,7 @@ export const addAbility = asyncHandler(
 
     res.status(200).json({
       success: true,
-      data: ability,
+      ability,
     })
   }
 )
@@ -77,9 +112,11 @@ export const updateAbility = asyncHandler(
       errorResponse(res, 404, "Could not find ability with provided id", {})
     }
 
+    ability?.save({ validateBeforeSave: false })
+
     res.status(200).json({
       success: true,
-      data: ability,
+      ability,
     })
   }
 )
