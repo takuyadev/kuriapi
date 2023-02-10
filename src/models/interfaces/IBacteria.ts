@@ -11,8 +11,11 @@ export interface IBacteria {
   }
   type: "edge" | "veil" | "solid"
   ability: {
-    english_ability: string
-    japanese_ability: string
+    _id?: string
+    name: {
+      english_name: string
+      japanese_name: string
+    }
   }
   size: "s" | "m" | "l"
   ph: "acid" | "neutral" | "alkaline"

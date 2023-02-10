@@ -1,0 +1,69 @@
+[
+  {
+    "game_index": 1,
+    "name": {
+      "romanji_name": "Kurikin",
+      "japanese_name": "くりきん"
+    },
+    "desc": {
+      "english_desc": "Dummy",
+      "japanese_desc": "Dummy"
+    },
+    "ph": "neutral",
+    "temperature": "medium",
+    "type": "edge",
+    "size": "s",
+    "ability": {
+      "english_ability": "Attackimin",
+      "japanese_ability": "セメルミン"
+    },
+    "stats": {
+      "hp": 76,
+      "attack": 53,
+      "attackSpeed": 67,
+      "defense": 11,
+      "speed": "fastest",
+      "growthSpeed": 236
+    },
+    "obtain": "primeval",
+    "saying": {
+      "english_saying": "A New Self",
+      "japanese_saying": "新しい自分"
+    }
+  },
+  {
+    "game_index": 2,
+    "name": {
+      "romanji_name": "Kabiirusu",
+      "japanese_name": "カビールス"
+    },
+    "desc": {
+      "english_desc": "Dummy",
+      "japanese_desc": "Dummy"
+    },
+    "ph": "acid",
+    "temperature": "medium",
+    "type": "veil",
+    "size": "s",
+    "ability": {
+      "_id": "63e5952b90ee7722ab9cd66f",
+      "name": {
+        "english_name": "Growthimin",
+        "japanese_name": "フエルミン"
+      }
+    },
+    "stats": {
+      "hp": 77,
+      "attack": 52,
+      "attackSpeed": 62,
+      "defense": 1,
+      "speed": "fastest",
+      "growthSpeed": 220
+    },
+    "obtain": "primeval",
+    "saying": {
+      "english_saying": "A Tenacious Heart",
+      "japanese_saying": "しゅうちゃく心"
+    }
+  }
+]
