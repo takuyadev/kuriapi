@@ -4,6 +4,7 @@ import { IBacteria } from "../models/interfaces/IBacteria"
 import { IPaginationOptions } from "../models/interfaces/IPaginate"
 import { IAbility } from "../models/interfaces/IAbility"
 import { paginate } from "../middlewares/paginate"
+import { slugify } from "../utils/slugify"
 
 // Establish methods on the model
 export interface IBacteriaModel extends Model<IBacteria> {
@@ -148,22 +149,20 @@ BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
   if (!this.isModified("name")) {
     next()
   }
-  this.slug = this.name.romanji_name.toLowerCase()
+  this.slug = slugify(this.name.romanji_name.toLowerCase())
 })
 
 // Update ability based on newly provided ability ID reference
-BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
-  // If ability is not modified, move onto next middleware
-  if (!this.isModified("ability")) {
-    next()
+BacteriaSchema.pre<IBacteria & Document & IBacteriaModel>(
+  "save",
+  async function (next) {
+    // Find ability on new id, and add only name to ability
+    const ability: IAbility | null = await Ability.findById(this.ability._id)
+    if (ability) {
+      this.ability = ability
+    }
   }
-
-  // Find ability on new id, and add only name to ability
-  const ability: IAbility | null = await Ability.findById(this.ability._id)
-  if (ability) {
-    this.ability = ability
-  }
-})
+)
 
 // Set pagination method for Bacteria
 BacteriaSchema.statics.paginate = async function (
