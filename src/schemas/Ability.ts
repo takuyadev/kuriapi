@@ -1,9 +1,9 @@
 import { model, Schema, Model, Document } from "mongoose"
 import { IAbility } from "../models/interfaces/IAbility"
 import { IPaginationOptions } from "../models/interfaces/IPaginate"
-import { paginate } from "../middlewares/paginate"
+import { paginate } from "../utils/modules/paginate"
 import Bacteria from "./Bacteria"
-import { slugify } from "../utils/slugify"
+import { slugify } from "../utils/modules/slugify"
 
 export interface IAbilityModel extends Model<IAbility> {
   paginate(query: any, options: IPaginationOptions): any
@@ -42,20 +42,29 @@ const AbilitySchema = new Schema<IAbility>({
   slug: String,
 })
 
-// Verify provided id and return statement
-
 // Update slug whenever name changes or updates
-AbilitySchema.pre<IAbility & Document>("save", async function (next) {
-  if (!this.isModified("name")) {
+AbilitySchema.pre<IAbility & Document>(
+  ["update", "updateOne"],
+  async function (next) {
+    const { _id } = this.getQuery()
+    const updatedData = this.getUpdate()
+
+    // Set new slug with new name
+    this.set("slug", slugify(updatedData.name.english_name))
+
+    // Update all bacteria with the same id
+    await Bacteria.updateMany(
+      { "ability._id": _id },
+      {
+        ability: {
+          _id: _id,
+          name: updatedData.name,
+        },
+      }
+    )
     next()
   }
-  this.slug = slugify(this.name.english_name.toLowerCase())
-
-  await Bacteria.updateMany(
-    { ability: { _id: this._id } },
-    { ability: { _id: this._id, name: this.name } }
-  )
-})
+)
 
 // Set pagination method for Ability
 AbilitySchema.statics.paginate = async function (

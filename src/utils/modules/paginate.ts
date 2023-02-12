@@ -1,7 +1,7 @@
 import {
   IPaginationResult,
   IPaginationOptions,
-} from "../models/interfaces/IPaginate"
+} from "../../models/interfaces/IPaginate"
 
 // Return pagination results
 export const paginate = async function <T>(

@@ -14,8 +14,11 @@
     "type": "edge",
     "size": "s",
     "ability": {
-      "english_ability": "Attackimin",
-      "japanese_ability": "セメルミン"
+      "_id": "63e5944190ee7722ab9cd66c",
+      "name": {
+        "english_name": "Growthimin",
+        "japanese_name": "フエルミン"
+      }
     },
     "stats": {
       "hp": 76,
@@ -46,7 +49,7 @@
     "type": "veil",
     "size": "s",
     "ability": {
-      "_id": "63e5952b90ee7722ab9cd66f",
+      "_id": "63e6d9bc5de6d6b057fbafe3",
       "name": {
         "english_name": "Growthimin",
         "japanese_name": "フエルミン"

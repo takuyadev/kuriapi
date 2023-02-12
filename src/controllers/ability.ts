@@ -66,14 +66,12 @@ export const updateAbility = asyncHandler(
     const data: IAbility = req.body
 
     // Search for ability data before adding bacteria
-    const ability = await Ability.findByIdAndUpdate(id, data, { new: true })
+    const ability = await Ability.updateOne({ _id: id }, data, { new: true })
 
     // Error handle if ability returns false
     if (!ability) {
       errorResponse(res, 404, "Could not find ability with provided id", {})
     }
-
-    ability?.save({ validateBeforeSave: false })
 
     res.status(200).json({
       success: true,

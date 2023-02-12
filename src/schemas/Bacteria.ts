@@ -3,8 +3,8 @@ import Ability from "./Ability"
 import { IBacteria } from "../models/interfaces/IBacteria"
 import { IPaginationOptions } from "../models/interfaces/IPaginate"
 import { IAbility } from "../models/interfaces/IAbility"
-import { paginate } from "../middlewares/paginate"
-import { slugify } from "../utils/slugify"
+import { paginate } from "../utils/modules/paginate"
+import { slugify } from "../utils/modules/slugify"
 
 // Establish methods on the model
 export interface IBacteriaModel extends Model<IBacteria> {
@@ -156,10 +156,29 @@ BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
 BacteriaSchema.pre<IBacteria & Document & IBacteriaModel>(
   "save",
   async function (next) {
+    // If not modified, go to next middleware
+    if (!this.isModified("ability")) {
+      next()
+    }
     // Find ability on new id, and add only name to ability
     const ability: IAbility | null = await Ability.findById(this.ability._id)
     if (ability) {
       this.ability = ability
+    }
+  }
+)
+
+// Update ability based on newly provided ability ID reference
+BacteriaSchema.pre<IBacteria & Document & IBacteriaModel>(
+  ["updateOne", "update"],
+  async function (this: IBacteria & mongoose.Document & IBacteriaModel) {
+    // Find ability on new id, and add only name to ability
+    const ability: IAbility | null = await Ability.findById(
+      this.getUpdate().ability._id
+    )
+
+    if (ability) {
+      this.set("ability", ability)
     }
   }
 )

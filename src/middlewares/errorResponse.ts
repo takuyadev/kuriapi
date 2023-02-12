@@ -1,4 +1,4 @@
-import { Error } from "../utils/Error"
+import { Error } from "../utils/class/Error"
 import { Response } from "express"
 
 export const errorResponse = (

@@ -76,7 +76,7 @@ export const updateBacteria = asyncHandler(
   async (req: Request, res: Response, _next: NextFunction) => {
     // Deconstruct ability out of request
     const { id } = req.params
-    const { body }: { body: IBacteria } = req.body
+    const { body }: { body: IBacteria } = req
 
     // Search for ability data before adding bacteria
     const data = await Bacteria.updateOne({ _id: id }, body)
