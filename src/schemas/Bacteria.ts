@@ -1,16 +1,14 @@
 import mongoose, { model, Model, Schema, Document } from "mongoose"
 import Ability from "./Ability"
-import { IBacteria } from "../models/interfaces/IBacteria"
+import {
+  IBacteria,
+  IBacteriaDocument,
+  IBacteriaModel,
+} from "../models/interfaces/IBacteria"
 import { IPaginationOptions } from "../models/interfaces/IPaginate"
 import { IAbility } from "../models/interfaces/IAbility"
 import { paginate } from "../utils/modules/paginate"
 import { slugify } from "../utils/modules/slugify"
-
-// Establish methods on the model
-export interface IBacteriaModel extends Model<IBacteria> {
-  paginate(query: any, options: IPaginationOptions): any
-  slugify(): any
-}
 
 const BacteriaSchema: Schema = new Schema<IBacteria>({
   game_index: {
@@ -47,7 +45,10 @@ const BacteriaSchema: Schema = new Schema<IBacteria>({
     },
   },
 
-  slug: String,
+  slug: {
+    type: String,
+    index: true,
+  },
 
   type: {
     type: String,
@@ -56,6 +57,7 @@ const BacteriaSchema: Schema = new Schema<IBacteria>({
 
   ability: {
     _id: {
+      index: true,
       type: mongoose.Schema.Types.ObjectId,
       ref: "Ability",
       required: true,
@@ -145,7 +147,7 @@ const BacteriaSchema: Schema = new Schema<IBacteria>({
 })
 
 // Update slug whenever name changes or updates
-BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
+BacteriaSchema.pre<IBacteriaDocument>("save", async function (next) {
   if (!this.isModified("name")) {
     next()
   }
@@ -153,27 +155,28 @@ BacteriaSchema.pre<IBacteria & Document>("save", async function (next) {
 })
 
 // Update ability based on newly provided ability ID reference
-BacteriaSchema.pre<IBacteria & Document & IBacteriaModel>(
-  "save",
-  async function (next) {
-    // If not modified, go to next middleware
-    if (!this.isModified("ability")) {
-      next()
-    }
-    // Find ability on new id, and add only name to ability
-    const ability: IAbility | null = await Ability.findById(this.ability._id)
-    if (ability) {
-      this.ability = ability
-    }
+BacteriaSchema.pre<IBacteriaDocument>("save", async function (next) {
+  // If not modified, go to next middleware
+  if (!this.isModified("ability")) {
+    next()
   }
-)
+  // Find ability on new id, and add only name to ability
+  const ability: IAbility | null = await Ability.findById(this.ability._id)
+  if (ability) {
+    this.ability = ability
+  }
+})
 
 // Update ability based on newly provided ability ID reference
-BacteriaSchema.pre<IBacteria & Document & IBacteriaModel>(
+BacteriaSchema.pre<IBacteriaDocument>(
   ["updateOne", "update"],
-  async function (this: IBacteria & mongoose.Document & IBacteriaModel) {
+  async function () {
+    // @ts-ignore : Maybe it is a bug as there is no reference of .getUpdate()
+    const update = this.getUpdate()
+
     // Find ability on new id, and add only name to ability
     const ability: IAbility | null = await Ability.findById(
+      // @ts-ignore
       this.getUpdate().ability._id
     )
 
@@ -183,6 +186,8 @@ BacteriaSchema.pre<IBacteria & Document & IBacteriaModel>(
   }
 )
 
+// If delete is chosen, then delete all other ability refs with same ID
+
 // Set pagination method for Bacteria
 BacteriaSchema.statics.paginate = async function (
   query,
@@ -191,7 +196,7 @@ BacteriaSchema.statics.paginate = async function (
   return await paginate.bind(this)(query, options)
 }
 
-export default model<IBacteria & Document, IBacteriaModel>(
+export default model<IBacteriaDocument, IBacteriaModel>(
   "Bacteria",
   BacteriaSchema
 )
