@@ -3,12 +3,12 @@ import { IUser, IUserModel } from "../models/interfaces/IUser"
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 
+// Set
 const UserSchema = new Schema<IUser>({
   email: {
     type: String,
-    index: true,
+    index: { unique: true, sparse: true },
     required: [true, "Please add an email"],
-    unique: true,
     match: [
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       "Please add a valid email",

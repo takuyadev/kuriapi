@@ -1,6 +1,12 @@
 import { Error } from "../utils/class/Error"
 import { Response } from "express"
 
+interface ErrorResponseData {
+  status: number
+  message: string
+  data: unknown
+}
+
 export const errorResponse = (
   res: Response,
   status: number,

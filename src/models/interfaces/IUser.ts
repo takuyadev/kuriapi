@@ -13,6 +13,10 @@ export interface IUserMethod extends IUser {
   getSignedJwtToken(): Jwt
 }
 
+export interface IUserRequest extends Request {
+  user: IUser
+}
+
 export interface IUserDocument extends IUser, Document {}
 
 export interface IUserModel extends IUserMethod, Model<IUser> {}

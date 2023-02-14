@@ -54,6 +54,7 @@ export const register = asyncHandler(
     // @ts-ignore
     const user: IUserModel = await User.create(req.body)
 
+    // If creating user returns error, throw error
     if (!user) {
       errorResponse(res, 404, "Error creating user.", {})
     }
@@ -65,15 +66,10 @@ export const register = asyncHandler(
 const sendTokenResponse = (res: Response, status: number, user: IUserModel) => {
   const token = user.getSignedJwtToken()
 
-  const options = {
-    expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-  }
-
+  // Set the header with Bearer Token
   res.header("Authorization", "Bearer " + token)
 
+  // Return status
   res.status(status).json({
     success: true,
     token,
