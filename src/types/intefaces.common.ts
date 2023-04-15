@@ -1,10 +1,10 @@
-import { Language, ObtainType, Ph, Size, Speed, Temperature, Type } from "./types.common";
+import { Translations, ObtainType, Ph, Size, Speed, Temperature, Type } from "./types.common";
 
 // Interface for Ability
 export interface Ability {
   id: number;
-  name: Language;
-  description: Language;
+  name: Translations;
+  description: Translations;
   slug: string;
 }
 
@@ -15,10 +15,10 @@ export interface Bacteria {
 
   // Bacteria information
   slug: string;
-  name: Language;
-  desc: Language;
+  name: Translations;
+  description: Translations;
   obtain_type: ObtainType;
-  saying: Language;
+  saying: Translations;
 
   // Stats
   hp: number;

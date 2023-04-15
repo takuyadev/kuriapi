@@ -1,7 +1,7 @@
 // Common types
-export type Language = {
-  english: string;
-  japanese: string;
+export type Translations = {
+  en: string;
+  jp: string;
 };
 
 // Bacteria Stats and
