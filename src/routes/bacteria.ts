@@ -1,7 +1,7 @@
 import { getBacterias } from "@controllers/bacteria";
 import express from "express";
-const app = express.Router({});
+const router = express.Router({});
 
-app.get("/", getBacterias);
+router.get("/", getBacterias);
 
-export default app;
+export default router;

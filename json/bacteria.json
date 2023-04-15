@@ -13,13 +13,6 @@
     "temperature": "medium",
     "type": "edge",
     "size": "s",
-    "ability": {
-      "_id": "63e5944190ee7722ab9cd66c",
-      "name": {
-        "english_name": "Growthimin",
-        "japanese_name": "フエルミン"
-      }
-    },
     "stats": {
       "hp": 76,
       "attack": 53,

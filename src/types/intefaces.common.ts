@@ -15,10 +15,10 @@ export interface Bacteria {
 
   // Bacteria information
   slug: string;
-  name: Translations;
-  description: Translations;
+  name: Translations | string;
+  description: Translations | string;
+  saying: Translations | string; 
   obtain_type: ObtainType;
-  saying: Translations;
 
   // Stats
   hp: number;
