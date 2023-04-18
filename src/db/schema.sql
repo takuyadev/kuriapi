@@ -70,7 +70,7 @@ CREATE TABLE kin (
 CREATE TABLE kin_translations (
     id SERIAL PRIMARY KEY NOT NULL,
     kin_id INTEGER NOT NULL REFERENCES kin(id),
-    languages_id INTEGER NOT NULL REFERENCES languages(id),
+    language_id INTEGER NOT NULL REFERENCES languages(id),
     name VARCHAR(75) NOT NULL,
     description TEXT NOT NULL,
     saying VARCHAR(100) NOT NULL
@@ -79,7 +79,7 @@ CREATE TABLE kin_translations (
 CREATE TABLE ability_translations (
     id SERIAL PRIMARY KEY NOT NULL,
     ability_id INTEGER NOT NULL REFERENCES ability(id),
-    languages_id INTEGER NOT NULL REFERENCES languages(id),
+    language_id INTEGER NOT NULL REFERENCES languages(id),
     name VARCHAR(75),
     description TEXT
 );

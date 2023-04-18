@@ -1,21 +1,21 @@
-import 'module-alias/register'; 
+// import 'module-alias/register'; 
 import express from "express";
-import dotenv from "dotenv";
 import helmet from "helmet";
 import hpp from "hpp";
 import cors from "cors";
 import morgan from "morgan";
 import { rateLimit } from "express-rate-limit";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Imports for routes
-import bacteria from "@routes/bacteria";
+import kin from "@routes/kin";
 import ability from "@routes/ability";
 
 // @ts-ignore : xss-clean has no type
 import xss from "xss-clean";
 
 // Set environment variable
-dotenv.config();
 const { SERVER_PORT } = process.env;
 const PORT = SERVER_PORT || 5000;
 
@@ -48,7 +48,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Routes
-app.use("/bacteria", bacteria);
+app.use("/kin", kin);
 app.use("/ability", ability);
 
 // listen to server
