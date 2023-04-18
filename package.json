@@ -2,6 +2,7 @@
   "scripts": {
     "start": "node ./dist/server.js",
     "build": "tsc",
+    "seed": "node ./src/db/seeds/_seed.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node -r tsconfig-paths/register src/server.ts"
   },
   "_moduleAliases": {
