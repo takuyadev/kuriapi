@@ -1,8 +1,8 @@
-import { getKin, getKinById } from "@controllers/kin";
+import { getKins, getKin } from "@controllers/kinControllers";
 import express from "express";
 const router = express.Router({});
 
-router.get("/", getKin);
-router.get("/:id", getKinById);
+router.get("/",   getKins);
+router.get("/:id", getKin);
 
 export default router;
