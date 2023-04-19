@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "speed_class": "S"
+  },
+  {
+    "id": 2,
+    "speed_class": "M"
+  },
+  {
+    "id": 3,
+    "speed_class": "L"
+  }
+]

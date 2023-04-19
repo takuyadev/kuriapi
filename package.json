@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node ./dist/server.js",
     "build": "tsc",
-    "seed": "node ./src/db/seeds/_seed.js",
+    "seed": "ts-node -r tsconfig-paths/register -r dotenv/config ./src/db/seed.ts",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node -r tsconfig-paths/register src/server.ts"
   },
   "_moduleAliases": {
@@ -33,6 +33,7 @@
     "@types/jsonwebtoken": "^9.0.1",
     "@types/morgan": "^1.9.4",
     "@types/node": "^18.13.0",
+    "csv-parse": "^5.3.8",
     "module-alias": "^2.2.2",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22",

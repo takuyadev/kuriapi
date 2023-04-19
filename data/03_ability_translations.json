@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "ability_id": 1,
+      "language_id": 2,
+      "name": "セメルミン",
+      "description": "攻撃力アップ"
+    },
+    {
+      "id": 2,
+      "ability_id": 2,
+      "language_id": 2,
+      "name": "マモルミン",
+      "description": "防御力アップ"
+    },
+    {
+      "id": 3,
+      "ability_id": 3,
+      "language_id": 2,
+      "name": "フエルミン",
+      "description": "増殖力アップ"
+    },
+    {
+      "id": 4,
+      "ability_id": 4,
+      "language_id": 2,
+      "name": "オヤスミン",
+      "description": "相手のキンを眠らせる"
+    },
+    {
+      "id": 5,
+      "ability_id": 5,
+      "language_id": 2,
+      "name": "ナノトルネード",
+      "description": "爆発で相手のキンを倒す"
+    },
+    {
+      "id": 6,
+      "ability_id": 6,
+      "language_id": 2,
+      "name": "ポイズンブラスト",
+      "description": "強烈の爆発で相手のキンを倒す"
+    },
+    {
+      "id": 7,
+      "ability_id": 7,
+      "language_id": 2,
+      "name": "キリングボム",
+      "description": "強烈の爆発で両側のキンを倒す"
+    }
+   ]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "temperature_id": 1,
+    "language_id": 2,
+    "name": "低温"
+  },
+  {
+    "id": 2,
+    "temperature_id": 2,
+    "language_id": 2,
+    "name": "中温"
+  },
+  {
+    "id": 3,
+    "temperature_id": 3,
+    "language_id": 2,
+    "name": "高温"
+  }
+]

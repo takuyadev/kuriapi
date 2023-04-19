@@ -9,11 +9,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "kurikin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_1.png",
     "hp": 76,
     "attack": 53,
     "defense": 11,
-    "growth_speed": 236,
-    "attack_speed": 67
+    "attack_speed": 67,
+    "growth_speed": 236
   },
   {
     "id": 2,
@@ -25,11 +26,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "kabirusu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_2.png",
     "hp": 77,
     "attack": 52,
     "defense": 1,
-    "growth_speed": 220,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 220
   },
   {
     "id": 3,
@@ -41,11 +43,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "gomisukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_3.png",
     "hp": 146,
     "attack": 140,
     "defense": 21,
-    "growth_speed": 125,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 125
   },
   {
     "id": 4,
@@ -57,11 +60,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "burigokin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_4.png",
     "hp": 92,
     "attack": 195,
     "defense": 1,
-    "growth_speed": 238,
-    "attack_speed": 247
+    "attack_speed": 247,
+    "growth_speed": 238
   },
   {
     "id": 5,
@@ -73,11 +77,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "demekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_5.png",
     "hp": 76,
     "attack": 53,
     "defense": 31,
-    "growth_speed": 233,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 233
   },
   {
     "id": 6,
@@ -89,11 +94,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "erekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_6.png",
     "hp": 74,
     "attack": 55,
     "defense": 24,
-    "growth_speed": 235,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 235
   },
   {
     "id": 7,
@@ -105,11 +111,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "hatoria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_7.png",
     "hp": 74,
     "attack": 55,
     "defense": 15,
-    "growth_speed": 235,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 235
   },
   {
     "id": 8,
@@ -121,11 +128,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "merodiumu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_8.png",
     "hp": 152,
     "attack": 135,
     "defense": 12,
-    "growth_speed": 128,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 128
   },
   {
     "id": 9,
@@ -137,11 +145,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "toraia",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_9.png",
     "hp": 74,
     "attack": 55,
     "defense": 1,
-    "growth_speed": 212,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 212
   },
   {
     "id": 10,
@@ -153,11 +162,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "kibarin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_10.png",
     "hp": 77,
     "attack": 52,
     "defense": 7,
-    "growth_speed": 212,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 212
   },
   {
     "id": 11,
@@ -169,11 +179,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "kagamin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_11.png",
     "hp": 146,
     "attack": 140,
     "defense": 18,
-    "growth_speed": 122,
-    "attack_speed": 50
+    "attack_speed": 50,
+    "growth_speed": 122
   },
   {
     "id": 12,
@@ -185,11 +196,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "sarakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_12.png",
     "hp": 74,
     "attack": 55,
     "defense": 1,
-    "growth_speed": 236,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 236
   },
   {
     "id": 13,
@@ -201,11 +213,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "azukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_13.png",
     "hp": 52,
     "attack": 77,
     "defense": 19,
-    "growth_speed": 240,
-    "attack_speed": 92
+    "attack_speed": 92,
+    "growth_speed": 240
   },
   {
     "id": 14,
@@ -217,11 +230,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "usakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_14.png",
     "hp": 77,
     "attack": 52,
     "defense": 13,
-    "growth_speed": 214,
-    "attack_speed": 67
+    "attack_speed": 67,
+    "growth_speed": 214
   },
   {
     "id": 15,
@@ -233,11 +247,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "chibirusu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_15.png",
     "hp": 76,
     "attack": 53,
     "defense": 13,
-    "growth_speed": 215,
-    "attack_speed": 67
+    "attack_speed": 67,
+    "growth_speed": 215
   },
   {
     "id": 16,
@@ -249,11 +264,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "benjerato",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_16.png",
     "hp": 79,
     "attack": 50,
     "defense": 31,
-    "growth_speed": 215,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 215
   },
   {
     "id": 17,
@@ -265,11 +281,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "hanakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_17.png",
     "hp": 80,
     "attack": 49,
     "defense": 3,
-    "growth_speed": 220,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 220
   },
   {
     "id": 18,
@@ -281,11 +298,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "panpukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_18.png",
     "hp": 75,
     "attack": 54,
     "defense": 17,
-    "growth_speed": 225,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 225
   },
   {
     "id": 19,
@@ -297,11 +315,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "amakuchin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_19.png",
     "hp": 77,
     "attack": 52,
     "defense": 26,
-    "growth_speed": 215,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 215
   },
   {
     "id": 20,
@@ -313,11 +332,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "chakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_20.png",
     "hp": 77,
     "attack": 52,
     "defense": 29,
-    "growth_speed": 235,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 235
   },
   {
     "id": 21,
@@ -329,11 +349,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "hekusaria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_21.png",
     "hp": 76,
     "attack": 53,
     "defense": 35,
-    "growth_speed": 212,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 212
   },
   {
     "id": 22,
@@ -345,11 +366,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "onionis",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_22.png",
     "hp": 213,
     "attack": 231,
     "defense": 2,
-    "growth_speed": 69,
-    "attack_speed": 15
+    "attack_speed": 15,
+    "growth_speed": 69
   },
   {
     "id": 23,
@@ -361,11 +383,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "kabukkin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_23.png",
     "hp": 152,
     "attack": 135,
     "defense": 12,
-    "growth_speed": 127,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 127
   },
   {
     "id": 24,
@@ -377,11 +400,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "penkin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_24.png",
     "hp": 76,
     "attack": 53,
     "defense": 2,
-    "growth_speed": 220,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 220
   },
   {
     "id": 25,
@@ -393,11 +417,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "sameba",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_25.png",
     "hp": 79,
     "attack": 50,
     "defense": 1,
-    "growth_speed": 222,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 222
   },
   {
     "id": 26,
@@ -409,11 +434,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "baundorufin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_26.png",
     "hp": 149,
     "attack": 138,
     "defense": 2,
-    "growth_speed": 131,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 131
   },
   {
     "id": 27,
@@ -425,11 +451,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "karakuchin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_27.png",
     "hp": 75,
     "attack": 54,
     "defense": 27,
-    "growth_speed": 224,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 224
   },
   {
     "id": 28,
@@ -441,11 +468,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "kinguzori",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_28.png",
     "hp": 218,
     "attack": 227,
     "defense": 16,
-    "growth_speed": 51,
-    "attack_speed": 13
+    "attack_speed": 13,
+    "growth_speed": 51
   },
   {
     "id": 29,
@@ -457,11 +485,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "kiramekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_29.png",
     "hp": 100,
     "attack": 186,
     "defense": 10,
-    "growth_speed": 156,
-    "attack_speed": 52
+    "attack_speed": 52,
+    "growth_speed": 156
   },
   {
     "id": 30,
@@ -473,11 +502,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "kindaku",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_30.png",
     "hp": 74,
     "attack": 55,
     "defense": 31,
-    "growth_speed": 225,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 225
   },
   {
     "id": 31,
@@ -489,11 +519,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "sabokin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_31.png",
     "hp": 152,
     "attack": 135,
     "defense": 12,
-    "growth_speed": 125,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 125
   },
   {
     "id": 32,
@@ -505,11 +536,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "kinburera",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_32.png",
     "hp": 75,
     "attack": 54,
     "defense": 31,
-    "growth_speed": 215,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 215
   },
   {
     "id": 33,
@@ -521,11 +553,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "tamamoguran",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_33.png",
     "hp": 149,
     "attack": 138,
     "defense": 16,
-    "growth_speed": 125,
-    "attack_speed": 50
+    "attack_speed": 50,
+    "growth_speed": 125
   },
   {
     "id": 34,
@@ -537,11 +570,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "meidokin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_34.png",
     "hp": 149,
     "attack": 138,
     "defense": 21,
-    "growth_speed": 120,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 120
   },
   {
     "id": 35,
@@ -553,11 +587,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "zoukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_35.png",
     "hp": 120,
     "attack": 166,
     "defense": 24,
-    "growth_speed": 114,
-    "attack_speed": 27
+    "attack_speed": 27,
+    "growth_speed": 114
   },
   {
     "id": 36,
@@ -569,11 +604,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "hemogurokin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_36.png",
     "hp": 75,
     "attack": 54,
     "defense": 19,
-    "growth_speed": 234,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 234
   },
   {
     "id": 37,
@@ -585,11 +621,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "kyanderia",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_37.png",
     "hp": 149,
     "attack": 138,
     "defense": 20,
-    "growth_speed": 124,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 124
   },
   {
     "id": 38,
@@ -601,11 +638,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "randoru",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_38.png",
     "hp": 26,
     "attack": 103,
     "defense": 2,
-    "growth_speed": 230,
-    "attack_speed": 192
+    "attack_speed": 192,
+    "growth_speed": 230
   },
   {
     "id": 39,
@@ -617,11 +655,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "kurosuwamu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_39.png",
     "hp": 311,
     "attack": 133,
     "defense": 20,
-    "growth_speed": 35,
-    "attack_speed": 24
+    "attack_speed": 24,
+    "growth_speed": 35
   },
   {
     "id": 40,
@@ -633,11 +672,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "benian",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_40.png",
     "hp": 149,
     "attack": 138,
     "defense": 16,
-    "growth_speed": 124,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 124
   },
   {
     "id": 41,
@@ -649,11 +689,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "shurikin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_41.png",
     "hp": 52,
     "attack": 77,
     "defense": 32,
-    "growth_speed": 209,
-    "attack_speed": 57
+    "attack_speed": 57,
+    "growth_speed": 209
   },
   {
     "id": 42,
@@ -665,11 +706,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "kawarari",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_42.png",
     "hp": 149,
     "attack": 138,
     "defense": 21,
-    "growth_speed": 140,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 140
   },
   {
     "id": 43,
@@ -681,11 +723,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "gourikin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_43.png",
     "hp": 92,
     "attack": 195,
     "defense": 21,
-    "growth_speed": 125,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 125
   },
   {
     "id": 44,
@@ -697,11 +740,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "majoriumu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_44.png",
     "hp": 146,
     "attack": 140,
     "defense": 20,
-    "growth_speed": 130,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 130
   },
   {
     "id": 45,
@@ -713,11 +757,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "pareton",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_45.png",
     "hp": 77,
     "attack": 52,
     "defense": 18,
-    "growth_speed": 215,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 215
   },
   {
     "id": 46,
@@ -729,11 +774,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "burasshi",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_46.png",
     "hp": 149,
     "attack": 138,
     "defense": 5,
-    "growth_speed": 140,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 140
   },
   {
     "id": 47,
@@ -745,11 +791,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "marione",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_47.png",
     "hp": 152,
     "attack": 135,
     "defense": 9,
-    "growth_speed": 140,
-    "attack_speed": 50
+    "attack_speed": 50,
+    "growth_speed": 140
   },
   {
     "id": 48,
@@ -761,11 +808,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "nigamin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_48.png",
     "hp": 149,
     "attack": 138,
     "defense": 8,
-    "growth_speed": 130,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 130
   },
   {
     "id": 49,
@@ -777,11 +825,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "piguria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_49.png",
     "hp": 74,
     "attack": 55,
     "defense": 11,
-    "growth_speed": 220,
-    "attack_speed": 67
+    "attack_speed": 67,
+    "growth_speed": 220
   },
   {
     "id": 50,
@@ -793,11 +842,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "rifion",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_50.png",
     "hp": 80,
     "attack": 49,
     "defense": 41,
-    "growth_speed": 210,
-    "attack_speed": 67
+    "attack_speed": 67,
+    "growth_speed": 210
   },
   {
     "id": 51,
@@ -809,11 +859,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "bibiriumu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_51.png",
     "hp": 89,
     "attack": 355,
     "defense": 3,
-    "growth_speed": 223,
-    "attack_speed": 192
+    "attack_speed": 192,
+    "growth_speed": 223
   },
   {
     "id": 52,
@@ -825,11 +876,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "keburisu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_52.png",
     "hp": 146,
     "attack": 140,
     "defense": 13,
-    "growth_speed": 130,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 130
   },
   {
     "id": 53,
@@ -841,11 +893,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "uzumakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_53.png",
     "hp": 149,
     "attack": 138,
     "defense": 11,
-    "growth_speed": 124,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 124
   },
   {
     "id": 54,
@@ -857,11 +910,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "furizun",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_54.png",
     "hp": 152,
     "attack": 135,
     "defense": 8,
-    "growth_speed": 137,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 137
   },
   {
     "id": 55,
@@ -873,11 +927,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "tokorokin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_55.png",
     "hp": 101,
     "attack": 28,
     "defense": 51,
-    "growth_speed": 176,
-    "attack_speed": 102
+    "attack_speed": 102,
+    "growth_speed": 176
   },
   {
     "id": 56,
@@ -889,11 +944,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "jakkin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_56.png",
     "hp": 152,
     "attack": 135,
     "defense": 7,
-    "growth_speed": 128,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 128
   },
   {
     "id": 57,
@@ -905,11 +961,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "haguruman",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_57.png",
     "hp": 152,
     "attack": 135,
     "defense": 15,
-    "growth_speed": 140,
-    "attack_speed": 50
+    "attack_speed": 50,
+    "growth_speed": 140
   },
   {
     "id": 58,
@@ -921,11 +978,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "muginia",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_58.png",
     "hp": 152,
     "attack": 135,
     "defense": 24,
-    "growth_speed": 123,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 123
   },
   {
     "id": 59,
@@ -937,11 +995,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "kasekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_59.png",
     "hp": 152,
     "attack": 135,
     "defense": 3,
-    "growth_speed": 138,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 138
   },
   {
     "id": 60,
@@ -953,11 +1012,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "sakuria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_60.png",
     "hp": 152,
     "attack": 135,
     "defense": 23,
-    "growth_speed": 120,
-    "attack_speed": 27
+    "attack_speed": 27,
+    "growth_speed": 120
   },
   {
     "id": 61,
@@ -969,11 +1029,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "furasukosu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_61.png",
     "hp": 146,
     "attack": 140,
     "defense": 3,
-    "growth_speed": 129,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 129
   },
   {
     "id": 62,
@@ -985,11 +1046,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "mitokondoru",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_62.png",
     "hp": 192,
     "attack": 95,
     "defense": 22,
-    "growth_speed": 128,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 128
   },
   {
     "id": 63,
@@ -1001,11 +1063,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "misutima",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_63.png",
     "hp": 79,
     "attack": 50,
     "defense": 1,
-    "growth_speed": 220,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 220
   },
   {
     "id": 64,
@@ -1017,11 +1080,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "watagenomu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_64.png",
     "hp": 100,
     "attack": 186,
     "defense": 10,
-    "growth_speed": 156,
-    "attack_speed": 52
+    "attack_speed": 52,
+    "growth_speed": 156
   },
   {
     "id": 65,
@@ -1033,11 +1097,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "hotaria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_65.png",
     "hp": 152,
     "attack": 135,
     "defense": 13,
-    "growth_speed": 139,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 139
   },
   {
     "id": 66,
@@ -1049,11 +1114,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "kakaonian",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_66.png",
     "hp": 146,
     "attack": 140,
     "defense": 16,
-    "growth_speed": 127,
-    "attack_speed": 50
+    "attack_speed": 50,
+    "growth_speed": 127
   },
   {
     "id": 67,
@@ -1065,11 +1131,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "perorikin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_67.png",
     "hp": 75,
     "attack": 54,
     "defense": 16,
-    "growth_speed": 221,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 221
   },
   {
     "id": 68,
@@ -1081,11 +1148,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "daioukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_68.png",
     "hp": 152,
     "attack": 135,
     "defense": 33,
-    "growth_speed": 126,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 126
   },
   {
     "id": 69,
@@ -1097,11 +1165,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "kouteipenkin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_69.png",
     "hp": 76,
     "attack": 53,
     "defense": 16,
-    "growth_speed": 215,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 215
   },
   {
     "id": 70,
@@ -1113,11 +1182,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "hekusarianzu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_70.png",
     "hp": 152,
     "attack": 135,
     "defense": 21,
-    "growth_speed": 124,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 124
   },
   {
     "id": 71,
@@ -1129,11 +1199,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "hakkaku",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_71.png",
     "hp": 81,
     "attack": 48,
     "defense": 70,
-    "growth_speed": 153,
-    "attack_speed": 112
+    "attack_speed": 112,
+    "growth_speed": 153
   },
   {
     "id": 72,
@@ -1145,11 +1216,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "magunaria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_72.png",
     "hp": 92,
     "attack": 195,
     "defense": 17,
-    "growth_speed": 129,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 129
   },
   {
     "id": 73,
@@ -1161,11 +1233,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "kurisutaria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_73.png",
     "hp": 227,
     "attack": 218,
     "defense": 25,
-    "growth_speed": 48,
-    "attack_speed": 13
+    "attack_speed": 13,
+    "growth_speed": 48
   },
   {
     "id": 74,
@@ -1177,11 +1250,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "warusutaria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_74.png",
     "hp": 355,
     "attack": 89,
     "defense": 16,
-    "growth_speed": 5,
-    "attack_speed": 7
+    "attack_speed": 7,
+    "growth_speed": 5
   },
   {
     "id": 75,
@@ -1193,11 +1267,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "metarudotto",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_75.png",
     "hp": 227,
     "attack": 218,
     "defense": 15,
-    "growth_speed": 48,
-    "attack_speed": 15
+    "attack_speed": 15,
+    "growth_speed": 48
   },
   {
     "id": 76,
@@ -1209,11 +1284,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "kuragen",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_76.png",
     "hp": 227,
     "attack": 218,
     "defense": 10,
-    "growth_speed": 49,
-    "attack_speed": 14
+    "attack_speed": 14,
+    "growth_speed": 49
   },
   {
     "id": 77,
@@ -1225,11 +1301,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "shiomanekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_77.png",
     "hp": 89,
     "attack": 198,
     "defense": 23,
-    "growth_speed": 122,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 122
   },
   {
     "id": 78,
@@ -1241,11 +1318,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "gosutokin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_78.png",
     "hp": 75,
     "attack": 54,
     "defense": 26,
-    "growth_speed": 225,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 225
   },
   {
     "id": 79,
@@ -1257,11 +1335,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "haniwamu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_79.png",
     "hp": 152,
     "attack": 135,
     "defense": 23,
-    "growth_speed": 124,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 124
   },
   {
     "id": 80,
@@ -1273,11 +1352,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "sukuriumu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_80.png",
     "hp": 75,
     "attack": 54,
     "defense": 18,
-    "growth_speed": 220,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 220
   },
   {
     "id": 81,
@@ -1289,11 +1369,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "ekusutoriumu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_81.png",
     "hp": 100,
     "attack": 186,
     "defense": 11,
-    "growth_speed": 145,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 145
   },
   {
     "id": 82,
@@ -1305,11 +1386,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "sukarkin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_82.png",
     "hp": 41,
     "attack": 88,
     "defense": 2,
-    "growth_speed": 237,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 237
   },
   {
     "id": 83,
@@ -1321,11 +1403,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "sodosuta",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_83.png",
     "hp": 84,
     "attack": 45,
     "defense": 32,
-    "growth_speed": 205,
-    "attack_speed": 57
+    "attack_speed": 57,
+    "growth_speed": 205
   },
   {
     "id": 84,
@@ -1337,11 +1420,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "bunshimogei",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_84.png",
     "hp": 152,
     "attack": 135,
     "defense": 2,
-    "growth_speed": 140,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 140
   },
   {
     "id": 85,
@@ -1353,11 +1437,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "bananaifu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_85.png",
     "hp": 152,
     "attack": 135,
     "defense": 1,
-    "growth_speed": 130,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 130
   },
   {
     "id": 86,
@@ -1369,11 +1454,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "yubuin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_86.png",
     "hp": 195,
     "attack": 92,
     "defense": 22,
-    "growth_speed": 128,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 128
   },
   {
     "id": 87,
@@ -1385,11 +1471,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "bakuterin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_87.png",
     "hp": 43,
     "attack": 244,
     "defense": 2,
-    "growth_speed": 228,
-    "attack_speed": 222
+    "attack_speed": 222,
+    "growth_speed": 228
   },
   {
     "id": 88,
@@ -1401,11 +1488,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "jasuteria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_88.png",
     "hp": 115,
     "attack": 172,
     "defense": 12,
-    "growth_speed": 94,
-    "attack_speed": 22
+    "attack_speed": 22,
+    "growth_speed": 94
   },
   {
     "id": 89,
@@ -1417,11 +1505,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "puragu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_89.png",
     "hp": 227,
     "attack": 218,
     "defense": 15,
-    "growth_speed": 70,
-    "attack_speed": 15
+    "attack_speed": 15,
+    "growth_speed": 70
   },
   {
     "id": 90,
@@ -1433,11 +1522,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "baikingu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_90.png",
     "hp": 74,
     "attack": 55,
     "defense": 40,
-    "growth_speed": 224,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 224
   },
   {
     "id": 91,
@@ -1449,11 +1539,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "ingenkin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_91.png",
     "hp": 152,
     "attack": 135,
     "defense": 8,
-    "growth_speed": 141,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 141
   },
   {
     "id": 92,
@@ -1465,11 +1556,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "piyorikin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_92.png",
     "hp": 227,
     "attack": 218,
     "defense": 33,
-    "growth_speed": 49,
-    "attack_speed": 15
+    "attack_speed": 15,
+    "growth_speed": 49
   },
   {
     "id": 93,
@@ -1481,11 +1573,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "yotsubakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_93.png",
     "hp": 227,
     "attack": 218,
     "defense": 5,
-    "growth_speed": 58,
-    "attack_speed": 13
+    "attack_speed": 13,
+    "growth_speed": 58
   },
   {
     "id": 94,
@@ -1497,11 +1590,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "asunaria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_94.png",
     "hp": 200,
     "attack": 244,
     "defense": 33,
-    "growth_speed": 4,
-    "attack_speed": 7
+    "attack_speed": 7,
+    "growth_speed": 4
   },
   {
     "id": 95,
@@ -1513,11 +1607,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "barasaito",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_95.png",
     "hp": 267,
     "attack": 178,
     "defense": 31,
-    "growth_speed": 73,
-    "attack_speed": 20
+    "attack_speed": 20,
+    "growth_speed": 73
   },
   {
     "id": 96,
@@ -1529,11 +1624,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "debirusu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_96.png",
     "hp": 67,
     "attack": 62,
     "defense": 5,
-    "growth_speed": 220,
-    "attack_speed": 57
+    "attack_speed": 57,
+    "growth_speed": 220
   },
   {
     "id": 97,
@@ -1545,11 +1641,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "sutingura",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_97.png",
     "hp": 227,
     "attack": 218,
     "defense": 10,
-    "growth_speed": 1,
-    "attack_speed": 32
+    "attack_speed": 32,
+    "growth_speed": 1
   },
   {
     "id": 98,
@@ -1561,11 +1658,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "aroman",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_98.png",
     "hp": 57,
     "attack": 229,
     "defense": 13,
-    "growth_speed": 129,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 129
   },
   {
     "id": 99,
@@ -1577,11 +1675,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "piramia",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_99.png",
     "hp": 92,
     "attack": 195,
     "defense": 22,
-    "growth_speed": 126,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 126
   },
   {
     "id": 100,
@@ -1593,11 +1692,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "daburerekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_100.png",
     "hp": 200,
     "attack": 244,
     "defense": 1,
-    "growth_speed": 6,
-    "attack_speed": 15
+    "attack_speed": 15,
+    "growth_speed": 6
   },
   {
     "id": 101,
@@ -1609,11 +1709,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "ponkotsuburikin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_101.png",
     "hp": 152,
     "attack": 135,
     "defense": 6,
-    "growth_speed": 131,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 131
   },
   {
     "id": 102,
@@ -1625,11 +1726,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "bukkumakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_102.png",
     "hp": 149,
     "attack": 138,
     "defense": 6,
-    "growth_speed": 127,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 127
   },
   {
     "id": 103,
@@ -1641,11 +1743,12 @@
     "temperature_id": 2,
     "ph_id": 2,
     "slug": "kurobi",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_103.png",
     "hp": 152,
     "attack": 135,
     "defense": 22,
-    "growth_speed": 120,
-    "attack_speed": 27
+    "attack_speed": 27,
+    "growth_speed": 120
   },
   {
     "id": 104,
@@ -1657,11 +1760,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "charanpowan",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_104.png",
     "hp": 77,
     "attack": 52,
     "defense": 44,
-    "growth_speed": 226,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 226
   },
   {
     "id": 105,
@@ -1673,11 +1777,12 @@
     "temperature_id": 3,
     "ph_id": 2,
     "slug": "bakuterinus",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_105.png",
     "hp": 75,
     "attack": 54,
     "defense": 25,
-    "growth_speed": 215,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 215
   },
   {
     "id": 106,
@@ -1689,11 +1794,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "sarunerakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_106.png",
     "hp": 175,
     "attack": 112,
     "defense": 7,
-    "growth_speed": 124,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 124
   },
   {
     "id": 107,
@@ -1705,11 +1811,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "pandaberu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_107.png",
     "hp": 146,
     "attack": 140,
     "defense": 20,
-    "growth_speed": 131,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 131
   },
   {
     "id": 108,
@@ -1721,11 +1828,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "koronekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_108.png",
     "hp": 76,
     "attack": 53,
     "defense": 33,
-    "growth_speed": 214,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 214
   },
   {
     "id": 109,
@@ -1737,11 +1845,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "purofiria",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_109.png",
     "hp": 215,
     "attack": 72,
     "defense": 63,
-    "growth_speed": 35,
-    "attack_speed": 92
+    "attack_speed": 92,
+    "growth_speed": 35
   },
   {
     "id": 110,
@@ -1753,11 +1862,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "kinobugoddo",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_110.png",
     "hp": 92,
     "attack": 195,
     "defense": 1,
-    "growth_speed": 240,
-    "attack_speed": 74
+    "attack_speed": 74,
+    "growth_speed": 240
   },
   {
     "id": 111,
@@ -1769,11 +1879,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "mayuhando",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_111.png",
     "hp": 152,
     "attack": 135,
     "defense": 12,
-    "growth_speed": 141,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 141
   },
   {
     "id": 112,
@@ -1785,11 +1896,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "mokumone",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_112.png",
     "hp": 77,
     "attack": 52,
     "defense": 19,
-    "growth_speed": 235,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 235
   },
   {
     "id": 113,
@@ -1801,11 +1913,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "kureyonisu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_113.png",
     "hp": 149,
     "attack": 138,
     "defense": 12,
-    "growth_speed": 137,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 137
   },
   {
     "id": 114,
@@ -1817,11 +1930,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "zukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_114.png",
     "hp": 74,
     "attack": 55,
     "defense": 13,
-    "growth_speed": 234,
-    "attack_speed": 72
+    "attack_speed": 72,
+    "growth_speed": 234
   },
   {
     "id": 115,
@@ -1833,11 +1947,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "bitorunaits",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_115.png",
     "hp": 75,
     "attack": 54,
     "defense": 24,
-    "growth_speed": 235,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 235
   },
   {
     "id": 116,
@@ -1849,11 +1964,12 @@
     "temperature_id": 1,
     "ph_id": 2,
     "slug": "harinezukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_116.png",
     "hp": 146,
     "attack": 140,
     "defense": 12,
-    "growth_speed": 134,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 134
   },
   {
     "id": 117,
@@ -1865,11 +1981,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "tanukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_117.png",
     "hp": 146,
     "attack": 140,
     "defense": 22,
-    "growth_speed": 132,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 132
   },
   {
     "id": 118,
@@ -1881,11 +1998,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "piconyanko",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_118.png",
     "hp": 152,
     "attack": 135,
     "defense": 14,
-    "growth_speed": 140,
-    "attack_speed": 45
+    "attack_speed": 45,
+    "growth_speed": 140
   },
   {
     "id": 119,
@@ -1897,11 +2015,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "mikurofangu",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_119.png",
     "hp": 146,
     "attack": 140,
     "defense": 14,
-    "growth_speed": 137,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 137
   },
   {
     "id": 120,
@@ -1913,11 +2032,12 @@
     "temperature_id": 1,
     "ph_id": 1,
     "slug": "tefutefupapi",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_120.png",
     "hp": 146,
     "attack": 140,
     "defense": 21,
-    "growth_speed": 139,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 139
   },
   {
     "id": 121,
@@ -1929,11 +2049,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "koakumania",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_121.png",
     "hp": 149,
     "attack": 138,
     "defense": 13,
-    "growth_speed": 135,
-    "attack_speed": 35
+    "attack_speed": 35,
+    "growth_speed": 135
   },
   {
     "id": 122,
@@ -1945,11 +2066,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "doragofaji",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_122.png",
     "hp": 146,
     "attack": 140,
     "defense": 16,
-    "growth_speed": 135,
-    "attack_speed": 40
+    "attack_speed": 40,
+    "growth_speed": 135
   },
   {
     "id": 123,
@@ -1961,11 +2083,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "kururibashi",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_123.png",
     "hp": 76,
     "attack": 53,
     "defense": 13,
-    "growth_speed": 223,
-    "attack_speed": 62
+    "attack_speed": 62,
+    "growth_speed": 223
   },
   {
     "id": 124,
@@ -1977,11 +2100,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "adamusukin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_124.png",
     "hp": 79,
     "attack": 50,
     "defense": 34,
-    "growth_speed": 235,
-    "attack_speed": 82
+    "attack_speed": 82,
+    "growth_speed": 235
   },
   {
     "id": 125,
@@ -1993,11 +2117,12 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "runasutein",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_125.png",
     "hp": 146,
     "attack": 140,
     "defense": 18,
-    "growth_speed": 133,
-    "attack_speed": 50
+    "attack_speed": 50,
+    "growth_speed": 133
   },
   {
     "id": 126,
@@ -2009,11 +2134,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "kekin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_126.png",
     "hp": 41,
     "attack": 88,
     "defense": 2,
-    "growth_speed": 254,
-    "attack_speed": 77
+    "attack_speed": 77,
+    "growth_speed": 254
   },
   {
     "id": 127,
@@ -2025,11 +2151,12 @@
     "temperature_id": 2,
     "ph_id": 1,
     "slug": "otamaji",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_127.png",
     "hp": 152,
     "attack": 135,
     "defense": 21,
-    "growth_speed": 124,
-    "attack_speed": 55
+    "attack_speed": 55,
+    "growth_speed": 124
   },
   {
     "id": 128,
@@ -2041,10 +2168,11 @@
     "temperature_id": 3,
     "ph_id": 1,
     "slug": "gunkamakin",
+    "img": "https://raw.githubusercontent.com/takuyadev/kuriapi/main/assets/kin/face_sprite/kin_128.png",
     "hp": 227,
     "attack": 218,
     "defense": 82,
-    "growth_speed": 1,
-    "attack_speed": 17
+    "attack_speed": 17,
+    "growth_speed": 1
   }
-]
+ ]

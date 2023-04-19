@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "slug": "attackimin"
+  },
+  {
+    "id": 2,
+    "slug": "defendimin"
+  },
+  {
+    "id": 3,
+    "slug": "growthimin"
+  },
+  {
+    "id": 4,
+    "slug": "nightimin"
+  },
+  {
+    "id": 5,
+    "slug": "tornadimin"
+  },
+  {
+    "id": 6,
+    "slug": "poisonimin"
+  },
+  {
+    "id": 7,
+    "slug": "wipimin"
+  }
+]

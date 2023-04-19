@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,    
+    "obtain_id": 1,
+    "language_id": 2,
+    "name": "原生"
+  },
+  {
+    "id": 2,    
+    "obtain_id": 2,
+    "language_id": 2,
+    "name": "新種"
+  },
+  {
+    "id": 3,    
+    "obtain_id": 3,
+    "language_id": 2,
+    "name": "コユウキン"
+  },
+  {
+    "id": 4,    
+    "obtain_id": 4,
+    "language_id": 2,
+    "name": "かくれキン"
+  }
+]

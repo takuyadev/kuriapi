@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "ph_id": 1,
+    "language_id": 2,
+    "name": "酸"
+  },
+  {
+    "id": 2,
+    "ph_id": 2,
+    "language_id": 2,
+    "name": "中温"
+  },
+  {
+    "id": 3,
+    "ph_id": 3,
+    "language_id": 2,
+    "name": "高温"
+  }
+]

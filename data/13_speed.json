@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "speed_class": "E"
+  },
+  {
+    "id": 2,
+    "speed_class": "D"
+  },
+  {
+    "id": 3,
+    "speed_class": "C"
+  },
+  {
+    "id": 4,
+    "speed_class": "B"
+  },
+  {
+    "id": 5,
+    "speed_class": "A"
+  }
+]
