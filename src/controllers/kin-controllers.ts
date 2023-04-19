@@ -1,7 +1,6 @@
-import db from "@db/db";
-import asyncHandler from "express-async-handler";
 import { NextFunction, Request, Response } from "express";
-import { getAllKins, getKinById } from "@db/query/kinQueries";
+import { getAllKins, getKinById } from "@/db/query/kin-queries";
+import asyncHandler from "express-async-handler";
 
 // @method GET
 // @route /kin
@@ -9,7 +8,7 @@ import { getAllKins, getKinById } from "@db/query/kinQueries";
 
 export const getKins = asyncHandler(
    async (req: Request, res: Response, next: NextFunction) => {
-      const data = await getAllKins(20, 0);
+      const data = await getAllKins(req.limit, req.offset * req.limit, req.lang_id);
 
       res.status(200).json({
          success: true,
@@ -24,14 +23,8 @@ export const getKins = asyncHandler(
 
 export const getKin = asyncHandler(
    async (req: Request, res: Response, next: NextFunction) => {
-      const { id } = req.params;
-      let { lang } = req.query;
-
-      if (!lang) {
-         lang = "2";
-      }
-
-      const data = await getKinById(id);
+      const { id: kinId } = req.params;
+      const data = await getKinById(Number(kinId), req.lang_id);
 
       res.status(200).json({
          success: true,

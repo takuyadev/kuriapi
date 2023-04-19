@@ -1,5 +1,5 @@
 import fs from "fs";
-import db from "@db/db";
+import db from "@/db/db";
 import path from "path";
 
 type File = string;
@@ -194,6 +194,8 @@ const useFiles = async (files: Files, queries: Queries, cb: Function) => {
       try {
          const index = parseFileName(file);
          // Insert Kin data based on CSV file
+
+         //@ts-ignore index can be indexed with string
          await cb(file, queries[index]);
       } catch (err) {
          console.error("Error:", err);

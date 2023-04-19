@@ -11,3 +11,5 @@
    JOIN languages AS c ON (c.id = b.languages_id)
    GROUP BY a.id; 
  */
+
+   

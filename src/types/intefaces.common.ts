@@ -8,13 +8,6 @@ import {
    Type,
 } from "./types.common";
 
-import { Request } from "express";
-
-// Pagination
-export interface PaginationRequest extends Request {
-   limit: number;
-   offset: number;
-}
 
 // Interface for Ability
 export interface Ability {

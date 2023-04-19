@@ -1,4 +1,6 @@
 // import 'module-alias/register'; 
+/// <reference path="@types/index.d.ts" />
+
 import express from "express";
 import helmet from "helmet";
 import hpp from "hpp";
@@ -9,8 +11,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Imports for routes
-import kin from "@routes/kin";
-import ability from "@routes/ability";
+import kin from "@/routes/kin-routes";
+import ability from "@/routes/abilities-routes";
 
 // @ts-ignore : xss-clean has no type
 import xss from "xss-clean";

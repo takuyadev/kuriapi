@@ -1,17 +1,18 @@
 {
   "scripts": {
+    "status":  "tsc --p ./tsconfig.json --listFiles",
     "start": "node ./dist/server.js",
     "build": "tsc",
     "seed": "ts-node -r tsconfig-paths/register -r dotenv/config ./src/db/seed.ts",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node -r tsconfig-paths/register src/server.ts"
   },
   "_moduleAliases": {
-    "@routes": "dist/routes",
-    "@data": "dist/data",
-    "@middlewares": "dist/middlewares",
-    "@controllers": "dist/controllers",
-    "@db": "dist/db",
-    "@lib": "dist/lib"
+    "@/routes": "dist/routes",
+    "@/data": "dist/data",
+    "@/middlewares": "dist/middlewares",
+    "@/controllers": "dist/controllers",
+    "@/db": "dist/db",
+    "@/lib": "dist/lib"
   },
   "dependencies": {
     "cors": "^2.8.5",
