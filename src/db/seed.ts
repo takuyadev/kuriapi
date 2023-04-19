@@ -1,6 +1,6 @@
 import fs from "fs";
 import db from "@db/db";
-import path from "path";
+import path, { parse } from "path";
 
 type File = string;
 type Files = File[];
@@ -160,12 +160,17 @@ const queries = {
   },
 };
 
+// Parses file name for index or display usage
+// Ex. 01_file_name.json => file_name
+const parseFileName = (name: string): string => {
+  return name.replace(/\.json/gi, "").replace(/^\d+_/, "");
+};
+
 // Helper for going through data directory, and reading into every file
 const useFiles = async (files: Files, queries: any, cb: Function) => {
-    console.log(files)
   for (const file of files) {
     try {
-      const index = file.replace(/\.json/, "").replace(/^\d+_/, "");
+      const index = parseFileName(file);
       // Insert Kin data based on CSV file
       await cb(file, queries[index]);
     } catch (err) {
@@ -174,9 +179,26 @@ const useFiles = async (files: Files, queries: any, cb: Function) => {
   }
 };
 
+// Helper for dropping tables
+const dropQuery = async (file: File, query: any) => {
+  const fileName = parseFileName(file);
+
+  try {
+    console.log(`Dropping table ${fileName}...`);
+
+    // Drop query
+    const dropQuery = `DROP TABLE ${fileName} CASCADE;`;
+
+    // Execute drop query with paramter
+    await db.query(dropQuery);
+  } catch (err) {
+    console.error("Skipping: Table most likely does not exist");
+  }
+};
+
 // Helper for creating tables
 const createQuery = async (file: File, query: any) => {
-  console.log(`Creating table ${file}...`);
+  console.log(`Creating table ${parseFileName(file)}...`);
   try {
     await db.query(query.create);
   } catch (err) {
@@ -204,33 +226,20 @@ const insertQuery = async (file: File, query: any) => {
 const seedDatabase = async () => {
   const files = await fs.readdirSync(path.resolve(process.env.PWD + "/data"));
 
-  for (const file of files) {
-    // For every loop, try dropping table.
-    // REASON: Drop table throws error if table does not exist
+  try {
+    // Create tables for database
+    await useFiles(files, queries, dropQuery);
 
-    // Remove .json ext from file, use for drop query
-    const table = file.replace(/\.json/gi, "").replace(/^\d+_/, "");
+    // Create tables for database
+    await useFiles(files, queries, createQuery);
 
-    try {
-      console.log(`Dropping ${table}...`);
+    // Insert data into tables
+    await useFiles(files, queries, insertQuery);
 
-      // Drop query
-      const dropQuery = `
-        DROP TABLE ${table} CASCADE;
-      `;
-
-      // Execute drop query with paramter
-      await db.query(dropQuery);
-    } catch (err) {
-      console.error("Skipping: Table most likely does not exist");
-    }
+    console.log("Successfully seeded database!")
+  } catch (err) {
+    console.error("Error seeding database!")
   }
-
-  // Create tables for database
-  await useFiles(files, queries, createQuery);
-
-  // Insert data into tables
-  await useFiles(files, queries, insertQuery);
 
   // Attempt to insert values into new tables
   process.exit();
