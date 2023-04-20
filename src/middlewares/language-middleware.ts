@@ -9,7 +9,7 @@ export const language = async (
    _res: Response,
    next: NextFunction
 ) => {
-   const isoCode = req.query.lang as IsoCodeType || undefined;
+   const isoCode = req.query.lang as IsoCodeType;
 
    // If language is not specified, then use JP as default
    if (!isoCode) {
@@ -19,7 +19,6 @@ export const language = async (
    // If language was specified, try getting language id
    if (isoCode) {
       req.lang_id = await getIdByIsoCode(isoCode);
-      console.log(req.lang_id)
    }
 
    next();

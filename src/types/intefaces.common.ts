@@ -8,7 +8,6 @@ import {
    Type,
 } from "./types.common";
 
-
 // Interface for Ability
 export interface Ability {
    id: number;
@@ -17,46 +16,48 @@ export interface Ability {
    slug: string;
 }
 
-// Interface for single bacteria
-export interface Bacteria {
+// Interface for basic Kin data, mostly used for mass data query
+export interface Kin {
    id: any;
-   ability_id: number;
-
+   
    // Bacteria information
    slug: string;
    name: Translations | string;
+   ability: string;
    description: Translations | string;
+   img: string;
+   type: Type;
+}
+
+// Interface for detailed information about a kin
+export interface KinDetailed extends Kin {
+
+   // Extra details
    saying: Translations | string;
-   obtain_type: ObtainType;
+   obtain: ObtainType;
 
    // Stats
    hp: number;
    attack: number;
    defense: number;
-   attackSpeed: number;
-   growthSpeed: number;
+   attack_speed: number;
+   growth_speed: number;
    speed: Speed;
+   size: Size;
 
    // Other info
-   type: Type;
-   size: Size;
    temperature: Temperature;
    ph: Ph;
 }
 
-export interface PaginationOptions {
-   currentPage?: number;
-   limitPerPage?: number;
-}
-
-export interface PaginationResult<T> {
-   data?: T[];
-   previous?: {
-      page: number;
-      limit: number;
-   };
-   next?: {
-      page: number;
-      limit: number;
-   };
-}
+// export interface PaginationResult<T> {
+//    data?: T[];
+//    previous?: {
+//       page: number;
+//       limit: number;
+//    };
+//    next?: {
+//       page: number;
+//       limit: number;
+//    };
+// }

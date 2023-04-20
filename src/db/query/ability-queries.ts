@@ -1,4 +1,7 @@
 import db from "@/db/db";
+import { Ability } from "@/types/intefaces.common";
+import { QueryResult } from "pg";
+import { responseHandler } from "utils/responseHandler";
 
 // @desc Queries all abilities from the database
 // @params langId, limit, page
@@ -6,25 +9,33 @@ import db from "@/db/db";
 export const getAllAbilities = async (
    langId: number,
    limit: number,
-   offset: number,
+   offset: number
 ) => {
+   // Setup query for getting abilities
    const query = `
       SELECT 
          a.id, 
+         a.slug,
          b.name, 
          b.description 
       FROM abilities AS a
          JOIN ability_translations AS b ON (a.id = b.ability_id)
          WHERE b.language_id = $1
-         LIMIT $2
+         LIMIT $
          OFFSET $3;
    `;
 
+   // Attempt request for all abilities from database
    try {
-      const res = await db.query(query, [langId, limit, offset]);
-      return res.rows;
+      const res: QueryResult = await db.query(query, [langId, limit, offset]);
+      const data = res.rows;
+
+      // Return success object
+      return responseHandler<Ability[]>(true, data);
    } catch (err) {
-      return err;
+      // If await query throws error
+      // Return error object
+      return responseHandler(false, err);
    }
 };
 
@@ -37,9 +48,10 @@ export const getAbilityByIdOrSlug = async (
    langId: number
 ) => {
    // Conditionally change slug or id based on what is provided
-   const filterQuery = slug ? " a.slug = $1 " : id ? " a.id = $1 " : "";
+   const filterQuery = slug ? "slug" : id ? " id" : "";
    const param = slug ? slug : id ? id : "";
 
+   // Setup query for query call later
    const query = `
       SELECT 
          a.id, 
@@ -49,14 +61,18 @@ export const getAbilityByIdOrSlug = async (
       FROM abilities AS a
          JOIN ability_translations AS b ON (a.id = b.ability_id)
          WHERE 
-            ${filterQuery}
+            a.${filterQuery} = $1
             AND b.language_id = $2;
    `;
 
+   // Attempt request for one ability from database
    try {
-      const res = await db.query(query, [param, langId]);
-      return res.rows[0];
+      const res: QueryResult = await db.query(query, [param, langId]);
+      const data: Ability = res.rows[0];
+
+      // Return success object
+      return responseHandler<Ability>(true, data);
    } catch (err) {
-      return err;
+      return responseHandler(false, err);
    }
 };

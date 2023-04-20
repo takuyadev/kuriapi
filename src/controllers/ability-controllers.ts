@@ -17,10 +17,9 @@ export const getAbilities = asyncHandler(
          req.offset * req.limit
       );
 
-      res.status(200).json({
-         success: true,
-         data: data,
-      });
+      if (!data.success) {
+         res.status(500).json(data);
+      }
    }
 );
 

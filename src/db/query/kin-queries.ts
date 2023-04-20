@@ -1,4 +1,5 @@
 import db from "@/db/db";
+import { Kin, KinDetailed } from "@/types/intefaces.common";
 
 // @desc Queries all kins from the database
 // @params langId, limit, page
@@ -40,7 +41,7 @@ export const getAllKins = async (
 
       // Await for response
       const data = await db.query(query, [limit, offset, langId]);
-      return data.rows;
+      return data.rows as Kin[];
    } catch (err) {
       return err;
    }
@@ -65,16 +66,19 @@ export const getKinByIdOrSlug = async (
          a.slug,
          b.name,
          d.name AS ability,
+         b.description,
          a.img,
+         b.saying,
+         n.name AS obtain,
          a.hp,
          a.attack,
          a.defense,
          a.attack_speed,
          a.growth_speed,
          g.speed_class AS speed,
+         o.size_class AS size,
          j.name AS temperature,
          l.name AS ph,
-         n.name AS obtain,
          json_build_object('name', f.name, 'img', e.img) AS type
       FROM kin AS a
          JOIN kin_translations AS b ON (a.id = b.kin_id)
@@ -90,6 +94,7 @@ export const getKinByIdOrSlug = async (
          JOIN ph_translations AS l ON (l.ph_id=k.id)
          JOIN obtain as m ON (m.id = a.obtain_id)
          JOIN obtain_translations AS n ON (n.obtain_id = m.id)
+         JOIN size AS o ON (a.size_id = o.id)
       WHERE
          ${filterQuery}
          AND b.language_id = $2
@@ -98,7 +103,9 @@ export const getKinByIdOrSlug = async (
       GROUP BY
          a.id,
          b.name,
+         b.description,
          a.hp,
+         b.saying,
          a.attack,
          a.defense,
          a.attack_speed,
@@ -107,6 +114,7 @@ export const getKinByIdOrSlug = async (
          a.img,
          f.name,
          e.img,
+         size,
          speed,
          temperature,
          ph,
@@ -116,7 +124,7 @@ export const getKinByIdOrSlug = async (
    try {
       // Await for response
       const data = await db.query(query, [param, langId]);
-      return data.rows[0];
+      return data.rows[0] as KinDetailed;
    } catch (err) {
       return err;
    }
