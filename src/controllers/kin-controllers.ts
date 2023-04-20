@@ -9,9 +9,9 @@ import asyncHandler from "express-async-handler";
 export const getKins = asyncHandler(
    async (req: Request, res: Response, next: NextFunction) => {
       const data = await getAllKins(
+         req.lang_id,
          req.limit,
-         req.offset * req.limit,
-         req.lang_id
+         req.offset * req.limit
       );
 
       res.status(200).json({

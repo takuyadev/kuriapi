@@ -13,15 +13,15 @@ export const getAllAbilities = async (
          a.id, 
          b.name, 
          b.description 
-      FROM abilities
+      FROM abilities AS a
          JOIN ability_translations AS b ON (a.id = b.ability_id)
-         WHERE b.language_id = $3;
-         LIMIT $1
-         OFFSET $2;
+         WHERE b.language_id = $1
+         LIMIT $2
+         OFFSET $3;
    `;
 
    try {
-      const res = await db.query(query, [limit, offset, langId]);
+      const res = await db.query(query, [langId, limit, offset]);
       return res.rows;
    } catch (err) {
       return err;

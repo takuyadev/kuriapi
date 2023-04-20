@@ -6,15 +6,15 @@ import {
 import asyncHandler from "express-async-handler";
 
 // @method GET
-// @route /kin
-// @desc Gets all kin from the database
+// @route /ability
+// @desc Gets all abilities in database
 
 export const getAbilities = asyncHandler(
    async (req: Request, res: Response, _next: NextFunction) => {
       const data = await getAllAbilities(
+         req.lang_id,
          req.limit,
-         req.offset * req.limit,
-         req.lang_id
+         req.offset * req.limit
       );
 
       res.status(200).json({
@@ -25,8 +25,8 @@ export const getAbilities = asyncHandler(
 );
 
 // @method GET
-// @route /kin/:id
-// @desc Get kin by id from the database
+// @route /ability/:id
+// @desc Get one ability by id or slug
 
 export const getAbility = asyncHandler(
    async (req: Request, res: Response, _next: NextFunction) => {
