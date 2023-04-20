@@ -8,6 +8,8 @@ declare global {
          offset: number;
          iso_code: IsoCodeType;
          lang_id: number;
+         slug: string;
+         param_id: id;
       }
    }
 }

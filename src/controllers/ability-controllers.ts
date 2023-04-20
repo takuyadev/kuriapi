@@ -1,5 +1,9 @@
 import { NextFunction, Request, Response } from "express";
-import { getAllAbilities, getAbilityById } from "@/db/query/ability-queries";
+import {
+   getAllAbilities,
+   getAbilityById,
+   getAbilityBySlug,
+} from "@/db/query/ability-queries";
 import asyncHandler from "express-async-handler";
 
 // @method GET
@@ -8,7 +12,11 @@ import asyncHandler from "express-async-handler";
 
 export const getAbilities = asyncHandler(
    async (req: Request, res: Response, next: NextFunction) => {
-      const data = await getAllAbilities(req.limit, req.offset * req.limit, req.lang_id);
+      const data = await getAllAbilities(
+         req.limit,
+         req.offset * req.limit,
+         req.lang_id
+      );
 
       res.status(200).json({
          success: true,
@@ -23,8 +31,17 @@ export const getAbilities = asyncHandler(
 
 export const getAbility = asyncHandler(
    async (req: Request, res: Response, next: NextFunction) => {
-      const { id: kinId } = req.params;
-      const data = await getAbilityById(Number(kinId), req.lang_id);
+      let data: any = {};
+
+      // If param id exists, then search by id
+      if (req.param_id) {
+         data = await getAbilityById(req.param_id, req.lang_id);
+      }
+
+      // If param id exists, then search by id
+      if (req.slug) {
+         data = await getAbilityBySlug(req.slug, req.lang_id);
+      }
 
       res.status(200).json({
          success: true,

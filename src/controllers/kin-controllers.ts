@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { getAllKins, getKinById } from "@/db/query/kin-queries";
+import { getAllKins, getKinById, getKinBySlug } from "@/db/query/kin-queries";
 import asyncHandler from "express-async-handler";
 
 // @method GET
@@ -8,7 +8,11 @@ import asyncHandler from "express-async-handler";
 
 export const getKins = asyncHandler(
    async (req: Request, res: Response, next: NextFunction) => {
-      const data = await getAllKins(req.limit, req.offset * req.limit, req.lang_id);
+      const data = await getAllKins(
+         req.limit,
+         req.offset * req.limit,
+         req.lang_id
+      );
 
       res.status(200).json({
          success: true,
@@ -23,8 +27,17 @@ export const getKins = asyncHandler(
 
 export const getKin = asyncHandler(
    async (req: Request, res: Response, next: NextFunction) => {
-      const { id: kinId } = req.params;
-      const data = await getKinById(Number(kinId), req.lang_id);
+      let data: any = {};
+
+      // If param id exists, then search by id
+      if (req.param_id) {
+         data = await getKinById(req.param_id, req.lang_id);
+      }
+
+      // If slug exists, then search by slug
+      if (req.slug) {
+         data = await getKinBySlug(req.slug, req.lang_id);
+      }
 
       res.status(200).json({
          success: true,

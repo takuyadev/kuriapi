@@ -48,7 +48,29 @@ export const getAbilityById = async (abilityId: number, langId: number) => {
 
    try {
       const res = await db.query(query, [abilityId, langId]);
-      return res.rows;
+      return res.rows[0];
+   } catch (err) {
+      return err;
+   }
+};
+
+export const getAbilityBySlug = async (slug: string, langId: number) => {
+   const query = `
+      SELECT 
+         a.id, 
+         b.name, 
+         a.slug,
+         b.description 
+      FROM abilities AS a
+         JOIN ability_translations AS b ON (a.id = b.ability_id)
+         WHERE 
+            a.slug = $1
+            AND b.language_id = $2;
+   `;
+
+   try {
+      const res = await db.query(query, [slug, langId]);
+      return res.rows[0];
    } catch (err) {
       return err;
    }
