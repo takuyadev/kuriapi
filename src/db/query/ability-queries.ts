@@ -1,28 +1,51 @@
 import db from "@/db/db";
 import { QueryResult } from "pg";
-import { Ability } from "@/types/intefaces.common";
+import { Ability, QueryOptions } from "@/types/intefaces.common";
+import { handleFilters } from "@/utils/handleFilters";
 
 // @desc Queries all abilities from the database
 // @params langId, limit, page
 
-export const getAllAbilities = async (langId: number, limit: number, offset: number) => {
-   // Setup query for getting abilities
-   const query = `
+export const getAllAbilities = async (langId: number, options: QueryOptions) => {
+   // Setup indexing
+   let params: any[] = [];
+   let paramIndex = 1;
+   const allowedSorts = ["id", "name", "slug"];
+
+   // Setup conditional queries
+   let conditionalQueries = "";
+
+   // All conditional queries
+   if (langId) {
+      conditionalQueries += `WHERE b.language_id = $${paramIndex++} `;
+      params.push(langId);
+   }
+
+   // Search for ability
+   if (options.search) {
+      // If search for name is provided, then use either name or slug to search
+      conditionalQueries += `AND b.name LIKE $${paramIndex} OR a.slug LIKE $${paramIndex++} `;
+      params.push(`%${options.search}%`);
+   }
+   
+   // Setup filter queries
+   const filterQueries = handleFilters(params, paramIndex, options, allowedSorts);
+
+   let query = `
       SELECT 
          a.id, 
          a.slug,
          b.name, 
          b.description 
       FROM abilities AS a
-         JOIN ability_translations AS b ON (a.id = b.ability_id)
-         WHERE b.language_id = $1
-         LIMIT $2
-         OFFSET $3;
+         JOIN ability_translations AS b ON (a.id = b.ability_id) 
+         ${conditionalQueries}
+         ${filterQueries}
    `;
 
    // Attempt request for all abilities from database
    try {
-      const result: QueryResult = await db.query(query, [langId, limit, offset]);
+      const result: QueryResult = await db.query(query, params);
       const data: Ability[] = result.rows;
 
       // Return success object

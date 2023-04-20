@@ -8,6 +8,14 @@ import {
    Type,
 } from "./types.common";
 
+export interface QueryOptions {
+   limit: number;
+   offset: number;
+   sort: string;
+   order: string;
+   search: string;
+}
+
 // Interface for Ability
 export interface Ability {
    id: number;

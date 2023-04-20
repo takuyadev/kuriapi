@@ -10,9 +10,10 @@ import { responseHandler } from "utils/responseHandler";
 export const getAbilities = asyncHandler(async (req: Request, res: Response, _next: NextFunction) => {
    // Set message if any errors occur
    let message = "";
-
+   
    // Await for data kins query response
-   const data = await getAllAbilities(req.lang_id, req.limit, req.offset * req.limit);
+   const { lang_id, options} = req;
+   const data = await getAllAbilities(lang_id, options);
 
    // If there is no data (length of 0)
    if (data.length === 0) {

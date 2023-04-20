@@ -12,7 +12,8 @@ export const getKins = asyncHandler(async (req: Request, res: Response, _next: N
    let message = "";
 
    // Await for data kins query response
-   const data = await getAllKins(req.lang_id, req.limit, req.offset * req.limit);
+   const { lang_id, options } = req;
+   const data = await getAllKins(lang_id, options);
 
    // If there is no data (length of 0)
    if (data.length === 0) {

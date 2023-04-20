@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
-// kurikin = true
-// 1 = false
+// @desc Handles all supported params
+// @query id/slug
 
 export const params = (req: Request, res: Response, next: NextFunction) => {
    const { id } = req.params;

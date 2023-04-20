@@ -1,13 +1,41 @@
 import db from "@/db/db";
-import { KinDetailed } from "@/types/intefaces.common";
+import { KinDetailed, QueryOptions } from "@/types/intefaces.common";
+import { handleFilters } from "@/utils/handleFilters";
 import { QueryResult } from "pg";
 
 // @desc Queries all kins from the database
 // @params langId, limit, page
 
-export const getAllKins = async (langId: number, limit: number | undefined, offset: number) => {
+export const getAllKins = async (langId: number, options: QueryOptions) => {
+   
+   // Setup tracking query state
+   let paramIndex = 1;
+   let params: any[] = [];
+   const allowedSorts = ["id", "name", "slug", "hp", "attack", "defense", "speed", "size"];
+
+   // Setup conditional queries
+   let conditionalQueries = "";
+
+   // Check for language
+   if (langId) {
+      conditionalQueries += `WHERE b.language_id = $${paramIndex} AND d.language_id = $${paramIndex++} `;
+      params.push(langId);
+   }
+
+   // Search for kin
+   if (options.search) {
+
+      // If search for name is provided, then use either name or slug to search
+      conditionalQueries += `AND b.name LIKE $${paramIndex} OR a.slug LIKE $${paramIndex++} `;
+      params.push(`%${options.search}%`);
+   }
+
+   // Setup filter queries
+   const filterQueries = handleFilters(params, paramIndex, options, allowedSorts);
+
+
    // Setup query for getting kins
-   const query = `
+   let query = `
       SELECT
          a.id,
          a.slug,
@@ -22,24 +50,21 @@ export const getAllKins = async (langId: number, limit: number | undefined, offs
          JOIN ability_translations d ON (d.ability_id = c.id)
          JOIN type AS e ON (e.id = a.type_id)
          JOIN type_translations AS f ON (f.type_id = e.id)
-      WHERE
-         b.language_id = $3
-         AND d.language_id = $3
-      GROUP BY
-         a.id,
+      ${conditionalQueries}
+      GROUP BY 
+         a.id, 
          b.name,
-         ability,
-         a.img,
-         f.name,
-         e.img
-      LIMIT $1 
-      OFFSET $2;
+         ability, 
+         a.img, 
+         f.name, 
+         e.img 
+      ${filterQueries}
    `;
 
    // Attempt to query all kins
    try {
       // Await for response
-      const result = (await db.query(query, [limit, offset, langId])) as QueryResult;
+      const result: QueryResult = await db.query(query, params);
 
       // Return only data from result
       return result.rows;
@@ -122,12 +147,11 @@ export const getKinByIdOrSlug = async (id: number | undefined, slug: string | un
    try {
       // Await for response
       const result: QueryResult = await db.query(query, [param, langId]);
-      const data: KinDetailed = result.rows[0]
+      const data: KinDetailed = result.rows[0];
 
       // Return only data
       return data;
    } catch (err) {
-
       // If there was internal server error, throw
       throw err;
    }
