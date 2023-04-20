@@ -1,62 +1,60 @@
 import db from "@/db/db";
-import { Kin, KinDetailed } from "@/types/intefaces.common";
+import { KinDetailed } from "@/types/intefaces.common";
+import { QueryResult } from "pg";
 
 // @desc Queries all kins from the database
 // @params langId, limit, page
 
-export const getAllKins = async (
-   langId: number,
-   limit: number | undefined,
-   offset: number
-) => {
-   try {
-      const query = `
-         SELECT
-            a.id,
-            a.slug,
-            b.name,
-            d.name AS ability,
-            a.img,
-            json_build_object('name', f.name, 'img', e.img) AS type
-         FROM
-            kin AS a
-            JOIN kin_translations AS b ON (a.id = b.kin_id)
-            JOIN abilities AS c ON (c.id = a.ability_id)
-            JOIN ability_translations d ON (d.ability_id = c.id)
-            JOIN type AS e ON (e.id = a.type_id)
-            JOIN type_translations AS f ON (f.type_id = e.id)
-         WHERE
-            b.language_id = $3
-            AND d.language_id = $3
-         GROUP BY
-            a.id,
-            b.name,
-            ability,
-            a.img,
-            f.name,
-            e.img
-         LIMIT $1 
-         OFFSET $2;
-      `;
+export const getAllKins = async (langId: number, limit: number | undefined, offset: number) => {
+   // Setup query for getting kins
+   const query = `
+      SELECT
+         a.id,
+         a.slug,
+         b.name,
+         d.name AS ability,
+         a.img,
+         json_build_object('name', f.name, 'img', e.img) AS type
+      FROM
+         kin AS a
+         JOIN kin_translations AS b ON (a.id = b.kin_id)
+         JOIN abilities AS c ON (c.id = a.ability_id)
+         JOIN ability_translations d ON (d.ability_id = c.id)
+         JOIN type AS e ON (e.id = a.type_id)
+         JOIN type_translations AS f ON (f.type_id = e.id)
+      WHERE
+         b.language_id = $3
+         AND d.language_id = $3
+      GROUP BY
+         a.id,
+         b.name,
+         ability,
+         a.img,
+         f.name,
+         e.img
+      LIMIT $1 
+      OFFSET $2;
+   `;
 
+   // Attempt to query all kins
+   try {
       // Await for response
-      const data = await db.query(query, [limit, offset, langId]);
-      return data.rows as Kin[];
+      const result = (await db.query(query, [limit, offset, langId])) as QueryResult;
+
+      // Return only data from result
+      return result.rows;
    } catch (err) {
-      return err;
+      // Throw error for async handler
+      throw err;
    }
 };
 
 // @desc Queries one single kin by id or slug
 // @params id, slug, lang_id
 
-export const getKinByIdOrSlug = async (
-   id: number | undefined,
-   slug: string | undefined,
-   langId: number
-) => {
+export const getKinByIdOrSlug = async (id: number | undefined, slug: string | undefined, langId: number) => {
    // Conditionally change slug or id based on what is provided
-   const filterQuery = slug ? "a.slug = $1" : id ? "a.id = $1" : "";
+   const filterQuery = slug ? "slug" : id ? "id" : "";
    const param = slug ? slug : id ? id : "";
 
    // Full query for getting one kin
@@ -96,7 +94,7 @@ export const getKinByIdOrSlug = async (
          JOIN obtain_translations AS n ON (n.obtain_id = m.id)
          JOIN size AS o ON (a.size_id = o.id)
       WHERE
-         ${filterQuery}
+         a.${filterQuery} = $1
          AND b.language_id = $2
          AND d.language_id = $2
          AND j.language_id = $2
@@ -123,9 +121,14 @@ export const getKinByIdOrSlug = async (
 
    try {
       // Await for response
-      const data = await db.query(query, [param, langId]);
-      return data.rows[0] as KinDetailed;
+      const result: QueryResult = await db.query(query, [param, langId]);
+      const data: KinDetailed = result.rows[0]
+
+      // Return only data
+      return data;
    } catch (err) {
-      return err;
+
+      // If there was internal server error, throw
+      throw err;
    }
 };

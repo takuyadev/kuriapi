@@ -12,7 +12,8 @@
       "@/middlewares": "dist/middlewares",
       "@/controllers": "dist/controllers",
       "@/db": "dist/db",
-      "@/lib": "dist/lib"
+      "@/lib": "dist/lib",
+      "@/utils": "dist/utils"
    },
    "dependencies": {
       "chalk": "^5.2.0",
