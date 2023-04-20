@@ -208,7 +208,7 @@ const dropQuery = async (file: File) => {
    const fileName = parseFileName(file);
 
    try {
-      console.log(`Dropping table ${fileName}...`);
+      console.log(`--- Dropping table ${fileName}...`);
 
       // Drop query
       const dropQuery = `DROP TABLE ${fileName} CASCADE;`;
@@ -216,13 +216,13 @@ const dropQuery = async (file: File) => {
       // Execute drop query with paramter
       await db.query(dropQuery);
    } catch (err) {
-      console.error("Skipping: Table most likely does not exist");
+      console.error("--- Skipping: Table most likely does not exist");
    }
 };
 
 // Helper for creating tables
 const createQuery = async (file: File, query: any) => {
-   console.log(`Creating table ${parseFileName(file)}...`);
+   console.log(`--- Creating table ${parseFileName(file)}...`);
    try {
       await db.query(query.create);
    } catch (err) {
@@ -232,7 +232,7 @@ const createQuery = async (file: File, query: any) => {
 
 // Helper for inserting data into tables
 const insertQuery = async (file: File, query: any) => {
-   console.log(`Inserting ${file}...`);
+   console.log(`--- Inserting ${file}...`);
 
    // Insert Kin data based on CSV file
    const dataDir = process.env.PWD + `/data/${file}`;
@@ -253,14 +253,16 @@ const seedDatabase = async () => {
    try {
       // Create tables for database
       await useFiles(files, queries, dropQuery);
+      console.log("Successfully dropped all tables!\n");
 
       // Create tables for database
       await useFiles(files, queries, createQuery);
+      console.log("Successfully created all tables!\n");
 
       // Insert data into tables
       await useFiles(files, queries, insertQuery);
+      console.log("Successfully inserted all data!\n");
 
-      console.log("Successfully seeded database!");
    } catch (err) {
       console.error("Error seeding database!");
    }

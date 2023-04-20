@@ -1,15 +1,34 @@
-/*
-   SELECT a.id, a.slug, b.name, b.description FROM ability 
-   AS a JOIN ability_translations AS b ON (a.id = b.ability_id) 
-   WHERE b.languages_id = $1;
-*/
+import { NextFunction, Request, Response } from "express";
+import { getAllAbilities, getAbilityById } from "@/db/query/ability-queries";
+import asyncHandler from "express-async-handler";
 
-/*
-   SELECT a.id, 
-   json_object_agg(c.iso_code, json_build_object('name', b.name, 'description', b.description)) AS name FROM ability AS a 
-   JOIN ability_translations AS b ON (a.id = b.ability_id)
-   JOIN languages AS c ON (c.id = b.languages_id)
-   GROUP BY a.id; 
- */
+// @method GET
+// @route /kin
+// @desc Gets all kin from the database
 
-   
+export const getAbilities = asyncHandler(
+   async (req: Request, res: Response, next: NextFunction) => {
+      const data = await getAllAbilities(req.limit, req.offset * req.limit, req.lang_id);
+
+      res.status(200).json({
+         success: true,
+         data: data,
+      });
+   }
+);
+
+// @method GET
+// @route /kin/:id
+// @desc Get kin by id from the database
+
+export const getAbility = asyncHandler(
+   async (req: Request, res: Response, next: NextFunction) => {
+      const { id: kinId } = req.params;
+      const data = await getAbilityById(Number(kinId), req.lang_id);
+
+      res.status(200).json({
+         success: true,
+         data: data,
+      });
+   }
+);

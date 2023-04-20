@@ -110,7 +110,3 @@ export const getKinById = async (kinId: number, langId: number) => {
       return err;
    }
 };
-
-`
-
-`;
