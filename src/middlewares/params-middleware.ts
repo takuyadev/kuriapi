@@ -17,6 +17,5 @@ export const params = (req: Request, res: Response, next: NextFunction) => {
       req.slug = id
    }
 
-   console.log(req.slug, req.param_id)
    next();
 };

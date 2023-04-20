@@ -1,17 +1,12 @@
 import db from "@/db/db";
 
-/*
-   SELECT a.id, 
-   json_object_agg(c.iso_code, json_build_object('name', b.name, 'description', b.description)) AS name FROM ability AS a 
-   JOIN ability_translations AS b ON (a.id = b.ability_id)
-   JOIN languages AS c ON (c.id = b.languages_id)
-   GROUP BY a.id; 
-*/
+// @desc Queries all abilities from the database
+// @params langId, limit, page
 
 export const getAllAbilities = async (
+   langId: number,
    limit: number,
    offset: number,
-   langId: number
 ) => {
    const query = `
       SELECT 
@@ -33,28 +28,18 @@ export const getAllAbilities = async (
    }
 };
 
-export const getAbilityById = async (abilityId: number, langId: number) => {
-   const query = `
-      SELECT 
-         a.id, 
-         b.name, 
-         b.description 
-      FROM abilities AS a
-         JOIN ability_translations AS b ON (a.id = b.ability_id)
-         WHERE 
-            a.id = $1
-            AND b.language_id = $2;
-   `;
+// @desc Queries one ability by id or slug
+// @params id, slug, langId
 
-   try {
-      const res = await db.query(query, [abilityId, langId]);
-      return res.rows[0];
-   } catch (err) {
-      return err;
-   }
-};
+export const getAbilityByIdOrSlug = async (
+   id: number,
+   slug: string,
+   langId: number
+) => {
+   // Conditionally change slug or id based on what is provided
+   const filterQuery = slug ? " a.slug = $1 " : id ? " a.id = $1 " : "";
+   const param = slug ? slug : id ? id : "";
 
-export const getAbilityBySlug = async (slug: string, langId: number) => {
    const query = `
       SELECT 
          a.id, 
@@ -64,12 +49,12 @@ export const getAbilityBySlug = async (slug: string, langId: number) => {
       FROM abilities AS a
          JOIN ability_translations AS b ON (a.id = b.ability_id)
          WHERE 
-            a.slug = $1
+            ${filterQuery}
             AND b.language_id = $2;
    `;
 
    try {
-      const res = await db.query(query, [slug, langId]);
+      const res = await db.query(query, [param, langId]);
       return res.rows[0];
    } catch (err) {
       return err;
