@@ -96,14 +96,11 @@ export const getAllKins = async (langId: number, options: QueryOptions) => {
       ${filterQueries}
    `;
 
-   console.log(query)
-   console.log(params)
-
    // Attempt to query all kins
    try {
       // Await for response
       const result: QueryResult = await db.query(query, params);
-      const data: Kin[] = result.rows;
+      const data: Kin[] | [] = result.rows;
 
       // Return only data from result
       return result.rows;
@@ -186,7 +183,7 @@ export const getKinByIdOrSlug = async (id: number | undefined, slug: string | un
    try {
       // Await for response
       const result: QueryResult = await db.query(query, [param, langId]);
-      const data: Kin = result.rows[0];
+      const data: Kin | {} = result.rows[0];
 
       // Return only data
       return data;

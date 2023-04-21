@@ -48,7 +48,7 @@ export const getAllAbilities = async (langId: number, options: QueryOptions) => 
    // Attempt request for all abilities from database
    try {
       const result: QueryResult = await db.query(query, params);
-      const data: Ability[] = result.rows;
+      const data: Ability[] | [] = result.rows;
 
       // Return success object
       return data;
@@ -85,7 +85,7 @@ export const getAbilityByIdOrSlug = async (id: number, slug: string, langId: num
    // Attempt request for one ability from database
    try {
       const result: QueryResult = await db.query(query, [param, langId]);
-      const data: Ability = result.rows[0];
+      const data: Ability | {} = result.rows[0];
 
       // Return success object
       return data;

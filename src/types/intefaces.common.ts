@@ -35,7 +35,10 @@ export interface Kin {
    ability: string;
    description: Translations | string;
    img: string;
-   type: Type;
+   type: {
+      name: Type;
+      img: string;
+   };
 
    // Extra details
    saying: Translations | string;

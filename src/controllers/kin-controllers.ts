@@ -37,10 +37,10 @@ export const getKin = asyncHandler(async (req: Request, res: Response, _next: Ne
    const data = await getKinByIdOrSlug(req.param_id, req.slug, req.lang_id);
 
    // If data is empty (empty {})
-   if (!data) {
+   if (!Object.keys(data).length) {
       message = "Could not find specified Kin";
    }
 
    // If data isn't empty, return with 200
-   res.status(200).json(new ApiSuccess<Kin>(data, message));
+   res.status(200).json(new ApiSuccess<Kin | {}>(data, message));
 });

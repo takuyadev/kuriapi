@@ -11,10 +11,10 @@ import { Ability } from "@/types/intefaces.common";
 export const getAbilities = asyncHandler(async (req: Request, res: Response, _next: NextFunction) => {
    // Set message if any errors occur
    let message = "";
-   
+
    // Await for data kins query response
-   const { lang_id, options} = req;
-   const data = await getAllAbilities(lang_id, options);
+   const { lang_id, options } = req;
+   const data: Ability[] | [] = await getAllAbilities(lang_id, options);
 
    // If there is no data (length of 0)
    if (data.length === 0) {
@@ -34,14 +34,13 @@ export const getAbility = asyncHandler(async (req: Request, res: Response, _next
    let message = "";
 
    // Await for kin by slug or id response
-   const data = await getAbilityByIdOrSlug(req.param_id, req.slug, req.lang_id);
+   const data: Ability | {} = await getAbilityByIdOrSlug(req.param_id, req.slug, req.lang_id);
 
    // If data is empty (empty {})
-   if (!data) {
+   if (!Object.keys(data).length) {
       message = "Could not find specified ability";
    }
 
    // If data isn't empty, return with 200
-   res.status(200).json(new ApiSuccess<Ability>(data, message));
-
+   res.status(200).json(new ApiSuccess<Ability | {}>(data, message));
 });
