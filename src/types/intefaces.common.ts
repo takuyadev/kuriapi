@@ -20,8 +20,8 @@ export interface QueryOptions {
 // Interface for Ability
 export interface Ability {
    id: number;
-   name: Translations;
-   description: Translations;
+   name: string;
+   description: string;
    slug: string;
 }
 
