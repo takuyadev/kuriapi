@@ -36,10 +36,7 @@ export interface Kin {
    description: Translations | string;
    img: string;
    type: Type;
-}
 
-// Interface for detailed information about a kin
-export interface KinDetailed extends Kin {
    // Extra details
    saying: Translations | string;
    obtain: ObtainType;
@@ -57,15 +54,3 @@ export interface KinDetailed extends Kin {
    temperature: Temperature;
    ph: Ph;
 }
-
-// export interface PaginationResult<T> {
-//    data?: T[];
-//    previous?: {
-//       page: number;
-//       limit: number;
-//    };
-//    next?: {
-//       page: number;
-//       limit: number;
-//    };
-// }

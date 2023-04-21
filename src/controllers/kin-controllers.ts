@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 import { getAllKins, getKinByIdOrSlug } from "@/db/query/kin-queries";
-import asyncHandler from "express-async-handler";
 import { ApiSuccess } from "@/utils/ApiSuccess";
-import { Kin, KinDetailed } from "@/types/intefaces.common";
+import { Kin } from "@/types/intefaces.common";
+import { asyncHandler } from "@/middlewares/aysnc-middleware";
 
 // @method GET
 // @route /kin
@@ -42,5 +42,5 @@ export const getKin = asyncHandler(async (req: Request, res: Response, _next: Ne
    }
 
    // If data isn't empty, return with 200
-   res.status(200).json(new ApiSuccess<KinDetailed>(data, message));
+   res.status(200).json(new ApiSuccess<Kin>(data, message));
 });
