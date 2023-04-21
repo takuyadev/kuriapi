@@ -1,7 +1,7 @@
 /// <reference path="@types/index.d.ts" />
 
 import "module-alias/register";
-import express, { NextFunction, RequestHandler, Response } from "express";
+import express from "express";
 import helmet from "helmet";
 import hpp from "hpp";
 import cors from "cors";
