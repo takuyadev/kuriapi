@@ -2,6 +2,20 @@
 
 KuriAPI is an unofficial API that provides data related to Kurikin - Nano Island Story, a game developed by MediaKite and published by Nintendo.
 
+## Documentation
+
+The documentation for KuriAPI is available in two formats, both containing the same information. Choose the format that you prefer or find more convenient.
+Website
+
+- [Website Documentation](https://kuriapi.onrender.com)
+- [Postman Documentation](https://documenter.getpostman.com/view/21556195/2s93Y3w287)
+
+## Endpoints
+Please refer to the documentation for more information.
+
+- https://kuriapi.onrender.com/kin
+- https://kuriapi.onrender.com/abiiity
+
 ## Techstack
 
 KuriAPI is built using the following technologies:
@@ -14,21 +28,6 @@ KuriAPI is built using the following technologies:
 - DocGen
 - Postman
 - Jest
-
-## Documentation
-
-The documentation for KuriAPI is available in two formats, both containing the same information. Choose the format that you prefer or find more convenient.
-Website
-
-You can find the KuriAPI documentation hosted on the following website:
-
-https://kuriapi.onrender.com
-
-
-Alternatively, you can access the documentation via Postman:
-
-https://documenter.getpostman.com/view/21556195/2s93Y3w287
-
 
 ## License
 
