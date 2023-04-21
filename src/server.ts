@@ -1,7 +1,7 @@
 /// <reference path="@types/index.d.ts" />
 
-import 'module-alias/register';
-import express from "express";
+import "module-alias/register";
+import express, { NextFunction, RequestHandler, Response } from "express";
 import helmet from "helmet";
 import hpp from "hpp";
 import cors from "cors";
@@ -23,6 +23,9 @@ const PORT = SERVER_PORT || 5000;
 
 // Setup server
 const app = express();
+
+// Setup static folder as public
+app.use(express.static(__dirname + "/public"));
 
 // Set security headers
 app.use(helmet());

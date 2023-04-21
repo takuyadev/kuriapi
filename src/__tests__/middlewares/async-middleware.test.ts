@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 import { asyncHandler } from "@/middlewares/aysnc-middleware";
-import { errorResponse } from "@/middlewares/error-middleware";
-import { ApiError } from "@/utils/ApiError";
 
 // Define the test suite for the asyncHandler function
 describe("asyncHandler", () => {
@@ -37,20 +35,4 @@ describe("asyncHandler", () => {
     // Check that the mock function was called with the request, response, and next arguments
     expect(mockFn).toHaveBeenCalledWith(req, res, next);
   });
-
-//   // Define a test case for when the function passed to asyncHandler throws an error
-//   it("calls the errorResponse middleware with the error, request, response, and next arguments", async () => {
-//     // Set up a mock error object
-//     const mockError: ApiError = new ApiError({}, 500, "Internal server error");
-
-//     // Define a mock function that throws the error
-//     const mockFnWithError = jest.fn().mockRejectedValueOnce(mockError);
-
-//     // Call the asyncHandler function with the mock function that throws the error
-//     const middleware = asyncHandler(mockFnWithError);
-//     await middleware(req as Request, res as Response, next);
-
-//     // Check that the errorResponse middleware was called with the error, request, response, and next arguments
-//     expect(errorResponse).toHaveBeenCalledWith(mockError, req, res, next);
-//   });
 });
