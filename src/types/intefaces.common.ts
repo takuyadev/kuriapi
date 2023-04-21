@@ -1,13 +1,14 @@
-import {
-   Translations,
-   ObtainType,
-   Ph,
-   Size,
-   Speed,
-   Temperature,
-   Type,
-} from "./types.common";
+import { Translations, ObtainType, Ph, Size, Speed, Temperature, Type } from "./types.common";
 
+// Interface for custom class ApiError
+export interface ApiError extends Error {
+   success: boolean;
+   message: string;
+   statusCode: number;
+   data: [] | {};
+}
+
+// Interface for all available query string options
 export interface QueryOptions {
    limit: number;
    offset: number;
@@ -27,7 +28,7 @@ export interface Ability {
 // Interface for basic Kin data, mostly used for mass data query
 export interface Kin {
    id: any;
-   
+
    // Bacteria information
    slug: string;
    name: Translations | string;
@@ -39,7 +40,6 @@ export interface Kin {
 
 // Interface for detailed information about a kin
 export interface KinDetailed extends Kin {
-
    // Extra details
    saying: Translations | string;
    obtain: ObtainType;

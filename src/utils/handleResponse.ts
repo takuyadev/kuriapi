@@ -4,7 +4,7 @@ interface Response<T> {
    message?: string;
 }
 
-export const responseHandler = <T extends unknown>(result: boolean, data: T, message?: string | undefined) => {
+export const handleResponse = <T extends unknown>(result: boolean, data: T, message?: string | undefined) => {
 
    // Setup response for return
    const response: Response<T> = {

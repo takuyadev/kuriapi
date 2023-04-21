@@ -57,8 +57,3 @@ app.use("/ability", ability);
 app.listen(PORT, () => {
   console.log(`App listening on port: ${PORT}`);
 });
-
-// Handle unhandled promise rejections
-process.on("unhandledRejection", (err: Error, _promise) => {
-  console.log(`Error: ${err.message}`);
-});

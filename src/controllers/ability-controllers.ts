@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from "express";
 import { getAllAbilities, getAbilityByIdOrSlug } from "@/db/query/ability-queries";
-import asyncHandler from "express-async-handler";
-import { responseHandler } from "utils/responseHandler";
+import { handleResponse } from "utils/handleResponse";
+import { asyncHandler } from "@/middlewares/aysnc-middleware";
 
 // @method GET
-// @route /ability
+// @route /ability`
 // @desc Gets all abilities in database
 
 export const getAbilities = asyncHandler(async (req: Request, res: Response, _next: NextFunction) => {
@@ -21,7 +21,7 @@ export const getAbilities = asyncHandler(async (req: Request, res: Response, _ne
    }
 
    // If there is data, return 200
-   res.status(200).json(responseHandler(true, data, message));
+   res.status(200).json(handleResponse(true, data, message));
 });
 
 // @method GET
@@ -41,5 +41,5 @@ export const getAbility = asyncHandler(async (req: Request, res: Response, _next
    }
 
    // If data isn't empty, return with 200
-   res.status(200).json(responseHandler(true, data, message));
+   res.status(200).json(handleResponse(true, data, message));
 });

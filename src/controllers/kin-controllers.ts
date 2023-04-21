@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { getAllKins, getKinByIdOrSlug } from "@/db/query/kin-queries";
 import asyncHandler from "express-async-handler";
-import { responseHandler } from "utils/responseHandler";
+import { handleResponse } from "utils/handleResponse";
 
 // @method GET
 // @route /kin
@@ -21,7 +21,7 @@ export const getKins = asyncHandler(async (req: Request, res: Response, _next: N
    }
 
    // If there is data, return 200
-   res.status(200).json(responseHandler(true, data, message));
+   res.status(200).json(handleResponse(true, data, message));
 });
 
 // @method GET
@@ -41,5 +41,5 @@ export const getKin = asyncHandler(async (req: Request, res: Response, _next: Ne
    }
 
    // If data isn't empty, return with 200
-   res.status(200).json(responseHandler(true, data, message));
+   res.status(200).json(handleResponse(true, data, message));
 });

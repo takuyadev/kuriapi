@@ -1,5 +1,6 @@
 import db from "@/db/db";
 import { KinDetailed, QueryOptions } from "@/types/intefaces.common";
+import { ApiError } from "@/utils/ApiError";
 import { handleFilters } from "@/utils/handleFilters";
 import { QueryResult } from "pg";
 
@@ -7,7 +8,6 @@ import { QueryResult } from "pg";
 // @params langId, limit, page
 
 export const getAllKins = async (langId: number, options: QueryOptions) => {
-   
    // Setup tracking query state
    let paramIndex = 1;
    let params: any[] = [];
@@ -24,7 +24,6 @@ export const getAllKins = async (langId: number, options: QueryOptions) => {
 
    // Search for kin
    if (options.search) {
-
       // If search for name is provided, then use either name or slug to search
       conditionalQueries += `AND b.name LIKE $${paramIndex} OR a.slug LIKE $${paramIndex++} `;
       params.push(`%${options.search}%`);
@@ -33,9 +32,8 @@ export const getAllKins = async (langId: number, options: QueryOptions) => {
    // Setup filter queries
    const filterQueries = handleFilters(params, paramIndex, options, allowedSorts);
 
-
    // Setup query for getting kins
-   let query = `
+   const query = `
       SELECT
          a.id,
          a.slug,
@@ -70,7 +68,7 @@ export const getAllKins = async (langId: number, options: QueryOptions) => {
       return result.rows;
    } catch (err) {
       // Throw error for async handler
-      throw err;
+      throw new ApiError(500, "Internal server error querying for kins");
    }
 };
 
@@ -153,6 +151,6 @@ export const getKinByIdOrSlug = async (id: number | undefined, slug: string | un
       return data;
    } catch (err) {
       // If there was internal server error, throw
-      throw err;
+      throw new ApiError(500, "Internal server error querying for kin");
    }
 };

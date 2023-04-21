@@ -2,6 +2,7 @@ import db from "@/db/db";
 import { QueryResult } from "pg";
 import { Ability, QueryOptions } from "@/types/intefaces.common";
 import { handleFilters } from "@/utils/handleFilters";
+import { ApiError } from "@/utils/ApiError";
 
 // @desc Queries all abilities from the database
 // @params langId, limit, page
@@ -27,11 +28,12 @@ export const getAllAbilities = async (langId: number, options: QueryOptions) => 
       conditionalQueries += `AND b.name LIKE $${paramIndex} OR a.slug LIKE $${paramIndex++} `;
       params.push(`%${options.search}%`);
    }
-   
+
    // Setup filter queries
    const filterQueries = handleFilters(params, paramIndex, options, allowedSorts);
 
-   let query = `
+   // Setup query
+   const query = `
       SELECT 
          a.id, 
          a.slug,
@@ -50,10 +52,11 @@ export const getAllAbilities = async (langId: number, options: QueryOptions) => 
 
       // Return success object
       return data;
-   } catch (err) {
+   } catch {
       // If await query throws error
       // Return error object
-      throw err;
+
+      throw new ApiError(500, "Internal server error querying for abilities");
    }
 };
 
@@ -87,6 +90,6 @@ export const getAbilityByIdOrSlug = async (id: number, slug: string, langId: num
       // Return success object
       return data;
    } catch (err) {
-      throw err;
+      throw new ApiError(500, "Internal server error querying for ability");
    }
 };
