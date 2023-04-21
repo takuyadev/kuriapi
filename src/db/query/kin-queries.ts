@@ -68,7 +68,7 @@ export const getAllKins = async (langId: number, options: QueryOptions) => {
       return result.rows;
    } catch (err) {
       // Throw error for async handler
-      throw new ApiError(500, "Internal server error querying for kins");
+      throw new ApiError([], 500, "Internal server error querying for kins");
    }
 };
 
@@ -151,6 +151,6 @@ export const getKinByIdOrSlug = async (id: number | undefined, slug: string | un
       return data;
    } catch (err) {
       // If there was internal server error, throw
-      throw new ApiError(500, "Internal server error querying for kin");
+      throw new ApiError({}, 500, "Internal server error querying for kin");
    }
 };

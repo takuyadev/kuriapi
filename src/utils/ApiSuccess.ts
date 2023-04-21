@@ -1,27 +1,14 @@
-export class ApiResponse<T> extends Error {
-   statusCode: number;
-   message: string;
+export class ApiSuccess<T> {
+   success: boolean;
+   message?: string;
    data: T;
 
-   constructor(data: T, statusCode: number, message: string) {
-      super()
-      this.message = message;
-      this.statusCode = statusCode;
-      this.data = data
-   }
+   constructor(data: T, message: string) {
+      this.success = true;
+      this.data = data;
 
-   error(){
-      return {
-         success: false,
-         message: this.message,
-         data: this.data
-      }
-   }
-
-   success(){
-      return {
-         success: true,
-         data: this.data
+      if (message) {
+         this.message = message;
       }
    }
 }

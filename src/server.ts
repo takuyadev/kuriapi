@@ -1,4 +1,4 @@
-// import 'module-alias/register'; 
+// import 'module-alias/register';
 /// <reference path="@types/index.d.ts" />
 
 import express from "express";
@@ -32,8 +32,8 @@ app.use(xss());
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 mins
-  max: 100,
+   windowMs: 10 * 60 * 1000, // 10 mins
+   max: 100,
 });
 app.use(limiter);
 
@@ -55,5 +55,10 @@ app.use("/ability", ability);
 
 // listen to server
 app.listen(PORT, () => {
-  console.log(`App listening on port: ${PORT}`);
+   console.log(`App listening on port: ${PORT}`);
+});
+
+// Handle unhandled promise rejections
+process.on("unhandledRejection", (err: Error, _promise) => {
+   console.log(`Error: ${err.message}`);
 });

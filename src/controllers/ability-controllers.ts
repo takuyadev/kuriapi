@@ -1,7 +1,8 @@
 import { NextFunction, Request, Response } from "express";
+import { ApiSuccess } from "@/utils/ApiSuccess";
 import { getAllAbilities, getAbilityByIdOrSlug } from "@/db/query/ability-queries";
-import { handleResponse } from "utils/handleResponse";
 import { asyncHandler } from "@/middlewares/aysnc-middleware";
+import { Ability } from "@/types/intefaces.common";
 
 // @method GET
 // @route /ability`
@@ -21,7 +22,7 @@ export const getAbilities = asyncHandler(async (req: Request, res: Response, _ne
    }
 
    // If there is data, return 200
-   res.status(200).json(handleResponse(true, data, message));
+   res.status(200).json(new ApiSuccess<Ability[]>(data, message));
 });
 
 // @method GET
@@ -41,5 +42,6 @@ export const getAbility = asyncHandler(async (req: Request, res: Response, _next
    }
 
    // If data isn't empty, return with 200
-   res.status(200).json(handleResponse(true, data, message));
+   res.status(200).json(new ApiSuccess<Ability>(data, message));
+
 });

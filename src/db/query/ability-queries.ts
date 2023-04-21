@@ -56,7 +56,7 @@ export const getAllAbilities = async (langId: number, options: QueryOptions) => 
       // If await query throws error
       // Return error object
 
-      throw new ApiError(500, "Internal server error querying for abilities");
+      throw new ApiError([], 500, "Internal server error querying for abilities");
    }
 };
 
@@ -90,6 +90,6 @@ export const getAbilityByIdOrSlug = async (id: number, slug: string, langId: num
       // Return success object
       return data;
    } catch (err) {
-      throw new ApiError(500, "Internal server error querying for ability");
+      throw new ApiError({}, 500, "Internal server error querying for ability");
    }
 };
