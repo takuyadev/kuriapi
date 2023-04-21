@@ -1,6 +1,6 @@
-// import 'module-alias/register';
 /// <reference path="@types/index.d.ts" />
 
+import 'module-alias/register';
 import express from "express";
 import helmet from "helmet";
 import hpp from "hpp";
