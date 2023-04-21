@@ -1,5 +1,6 @@
-# KuriAPI
 > It may take a while for the server to startup (hosted on free plans, Render and ElephantSQL). Please wait a bit for the server to load properly.
+
+# KuriAPI
 
 KuriAPI is an unofficial API that provides data related to Kurikin - Nano Island Story, a game developed by MediaKite and published by Nintendo.
 
