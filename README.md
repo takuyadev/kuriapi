@@ -7,14 +7,14 @@ Tech Stack
 
 KuriAPI is built using the following technologies:
 
-    Node.js
-    Express.js
-    TypeScript
-    node-pg
-    PostgreSQL
-    DocGen
-    Postman
-    Jest
+- Node.js
+- Express.js
+- TypeScript
+- node-pg
+- PostgreSQL
+- DocGen
+- Postman
+- Jest
 
 ## Documentation
 
@@ -22,12 +22,13 @@ The documentation for KuriAPI is available in two formats, both containing the s
 Website
 
 You can find the KuriAPI documentation hosted on the following website:
+
 https://kuriapi.onrender.com
-Postman
+
 
 Alternatively, you can access the documentation via Postman:
+
 https://documenter.getpostman.com/view/21556195/2s93Y3w287
-License
 
 
 ## License
