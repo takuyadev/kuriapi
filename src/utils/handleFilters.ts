@@ -8,7 +8,7 @@ export const handleFilters = (params: any[], index: number, options: QueryOption
    const { limit, offset, sort, order } = options;
 
    // If sort is not provided, then default to sort by id
-   if (!sort) {
+   if (!allowedSorts.includes(sort)) {
       query += `ORDER BY a.id `;
    }
 
@@ -22,24 +22,23 @@ export const handleFilters = (params: any[], index: number, options: QueryOption
       }
 
       // Concatenate prefix and sort name
-      query += `ORDER BY ${prefix + "." + sort} `
+      query += `ORDER BY ${prefix + "." + sort} `;
    }
 
    // Handle order of data
    if (order) {
-
       // To avoid SQL injection, only allow desc or asc as queries
       query += `${order === "desc" ? "DESC" : "ASC"} `;
    }
 
    // Handle page limit
-   if (limit) {
+   if (limit !== 0 &&  typeof limit === "number") {
       query += `LIMIT $${index++} `;
       params.push(limit);
    }
 
    // Handle offset or skip pages
-   if (offset) {
+   if (offset !== 0 &&  typeof offset === "number") {
       query += `OFFSET $${index++} `;
       params.push(offset);
    }
