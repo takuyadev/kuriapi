@@ -7,7 +7,6 @@ KuriAPI is an unofficial API that provides data related to Kurikin - Nano Island
 ## Documentation
 
 The documentation for KuriAPI is available in two formats, both containing the same information. Choose the format that you prefer or find more convenient.
-Website
 
 - [Website Documentation](https://kuriapi.onrender.com)
 - [Postman Documentation](https://documenter.getpostman.com/view/21556195/2s93Y3w287)
